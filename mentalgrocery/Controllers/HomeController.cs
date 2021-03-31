@@ -1,4 +1,5 @@
-﻿using System;
+﻿using mentalgrocery.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace mentalgrocery.Controllers
 {
     public class HomeController : Controller
     {
+        private webModels db = new webModels();
         public ActionResult Index()
         {
             return View();
@@ -24,6 +26,16 @@ namespace mentalgrocery.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Groups()
+        {
+            return View();
+        }
+
+        public ActionResult SingleGroup()
+        {
             return View();
         }
     }
