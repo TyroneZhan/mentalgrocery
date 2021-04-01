@@ -38,5 +38,22 @@ namespace mentalgrocery.Controllers
         {
             return View();
         }
+
+        public ActionResult VoGroups()
+        {
+            return View();
+        }
+        public ActionResult MaGroups()
+        {
+            return View();
+        }
+        public ActionResult WaGroups()
+        {
+            return View();
+        }
+        public ActionResult CkGroups()
+        {
+            return View();
+        }
     }
 }

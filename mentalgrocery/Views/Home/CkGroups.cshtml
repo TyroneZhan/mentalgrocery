@@ -1,0 +1,304 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    function fc_nm01() {
+        document.getElementById('name_detail').innerHTML = 'Ballarat Amateur Canoe Club';
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone Number';
+        document.getElementById('email_detail').innerHTML = 'Email:No Email';
+        document.getElementById('web_detail').innerHTML = 'Web Address:http://www.ballaratcanoeclub.org.au/';
+    }
+
+    function fc_nm02() {
+        document.getElementById('name_detail').innerHTML = 'Bass Coast Kayak Club';
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone Number';
+        document.getElementById('email_detail').innerHTML = 'Email:No Email';
+        document.getElementById('web_detail').innerHTML = 'Web Address:No Website';
+    }
+
+    function fc_nm03() {
+        document.getElementById('name_detail').innerHTML = 'Bendigo Canoe Club';
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone Number';
+        document.getElementById('email_detail').innerHTML = 'Email:No Email';
+        document.getElementById('web_detail').innerHTML = 'Web Address:No Website';
+    }
+</script>
+<!-- Start domar_breadcrumb section -->
+<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/canoe2.jpg);">
+    <div class="bg_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>Canoes Kayakt Group</h2>
+                    <ul>
+                        <li><a href="~/Home/Index">Home</a></li>
+                        <li class="active">Canoes Kayakt Group</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_breadcrumb section -->
+<!-- Start domar_single_course section -->
+<section class="domar_single_course section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="single_course_wrapper">
+                    <div class="domar_img">
+                        <img src="/assets/images/canoe.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="container">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Group Name</th>
+                                    <th>Postcode</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td onclick="fc_nm01()">Ballarat Amateur Canoe Club</td>
+                                    <td>3350</td>
+                                    <td>GPO Box 2018</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td onclick="fc_nm02()">Bass Coast Kayak Club</td>
+                                    <td>3991</td>
+                                    <td>Bass Landing</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td onclick="fc_nm03()">Bendigo Canoe Club</td>
+                                    <td>3554</td>
+                                    <td>50 Glencoe Street</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <!--<div class="admin_area">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="admin_box">
+                                    <div class="admin_thumb">
+                                        <img src="assets/images/admin_1.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="admin_info">
+                                        <h4>Sara Tylor</h4>
+                                        <h6>Graphics Instructor</h6>
+                                        <ul>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><a href="#"> 4.9 (66 ratings)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="price_area">
+                                    <div class="price_tag">
+                                        <h4><span>$169</span>$159</h4>
+                                    </div>
+                                    <div class="buy_button">
+                                        <a href="#" class="domar_btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<div class="discription_area">-->
+                    <!-- Nav tabs -->
+                    <!--<div class="discription_tab">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#activities">Activities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <!-- Tab panes -->
+                    <!--<div class="tab-content">
+                            <div id="overview" class="tab-pane active">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="curriculum" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="instructor" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="reviews" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="recent_course course_style_v1">
+                        <div class="title">
+                            <span>Related Groups</span>
+                            <h4>There are variations Available</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="course_box">
+                                    <div class="domar_img">
+                                        <img src="/assets/images/ma_s.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="domar_info">
+                                        <div class="post_title">
+                                            <h3><a href="~/Home/MaGroups">Martial Arts Groups</a></h3>
+                                        </div>
+                                        <div class="post_meta">
+                                            <div class="bottom_info">
+                                                <ul>
+                                                    <li><span>Recommendation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="course_box">
+                                    <div class="domar_img">
+                                        <img src="/assets/images/vo_s.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="domar_info">
+                                        <div class="post_title">
+                                            <h3><a href="~/Home/VoGroups">Volunteering Groups</a></h3>
+                                        </div>
+                                        <div class="post_meta">
+                                            <div class="bottom_info">
+                                                <ul>
+                                                    <li><span>Recommendation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                    <li class="star"></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="domar_sidebar">
+                    <div class="widget_box search_box">
+                        <div class="widget_title">
+                            <h4>Group Name</h4>
+                        </div>
+                        <div>
+                            <span id="name_detail">Ballarat Amateur Canoe Club</span>
+                        </div>
+                    </div>
+                    <div class="widget_box">
+                        <div class="widget_title">
+                            <h4>Short Description</h4>
+                        </div>
+                        <!--<div class="featured_area">
+                            <div class="single_news">
+                                <div class="news_thumb">
+                                    <a href="#"><img src="assets/images/thumb_2.jpg" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="news_info">
+                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
+                                </div>
+                            </div>
+                            <div class="single_news">
+                                <div class="news_thumb">
+                                    <a href="#"><img src="assets/images/thumb_3.jpg" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="news_info">
+                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
+                                </div>
+                            </div>
+                            <div class="single_news">
+                                <div class="news_thumb">
+                                    <a href="#"><img src="assets/images/thumb_4.jpg" class="img-fluid" alt=""></a>
+                                </div>
+                                <div class="news_info">
+                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="widget_box categories_box">
+                        <div class="widget_title">
+                            <h4>Map</h4>
+                        </div>
+                        <span>navigate map from google api</span>
+                    </div>
+                    <div class="widget_box tags_box">
+                        <div class="widget_title">
+                            <h4>Contact Info</h4>
+                        </div>
+                        <ul class="widget_list">
+                            <li id="phone_detail">Phone:No Phone Number</li>
+                            <li id="email_detail">Email:No Email</li>
+                            <li id="web_detail">Web Address:http://www.ballaratcanoeclub.org.au/</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_single_course section -->

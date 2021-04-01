@@ -1,0 +1,113 @@
+﻿@model mentalgrocery.Models.VolunteeringList
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VolunteeringList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.groupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.groupId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voSuburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vpPostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vpPostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vpState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vpState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voLGA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voLGA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voWeb)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
