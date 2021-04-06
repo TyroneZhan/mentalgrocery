@@ -1,0 +1,94 @@
+﻿@model IEnumerable<mentalgrocery.Models.MartialArtsList>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.groupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maSuburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maPostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maLGA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maWeb)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.groupId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maSuburb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maPostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maLGA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maRegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maWeb)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.maId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.maId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.maId })
+        </td>
+    </tr>
+}
+
+</table>

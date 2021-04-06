@@ -1,0 +1,94 @@
+﻿@model IEnumerable<mentalgrocery.Models.CanoesKayaktsList>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.groupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckSuburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckPostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckLGA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ckWeb)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.groupId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckSuburb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckPostCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckLGA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckRegion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ckWeb)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ckId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ckId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ckId })
+        </td>
+    </tr>
+}
+
+</table>

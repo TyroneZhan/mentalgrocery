@@ -10,107 +10,107 @@ using mentalgrocery.Models;
 
 namespace mentalgrocery.Controllers
 {
-    public class VolunteeringListsController : Controller
+    public class WalkingListsController : Controller
     {
         private webModels db = new webModels();
 
-        // GET: VolunteeringLists
+        // GET: WalkingLists
         public ActionResult Index()
         {
-            return View(db.VolunteeringLists.ToList());
+            return View(db.WalkingLists.ToList());
         }
 
-        // GET: VolunteeringLists/Details/5
+        // GET: WalkingLists/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            WalkingList walkingList = db.WalkingLists.Find(id);
+            if (walkingList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(walkingList);
         }
 
-        // GET: VolunteeringLists/Create
+        // GET: WalkingLists/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: VolunteeringLists/Create
+        // POST: WalkingLists/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Create([Bind(Include = "waId,groupId,waName,waAddress,waSuburb,waPostCode,waState,waLGA,waRegion,waPhone,waEmail,waWeb")] WalkingList walkingList)
         {
             if (ModelState.IsValid)
             {
-                db.VolunteeringLists.Add(volunteeringList);
+                db.WalkingLists.Add(walkingList);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(volunteeringList);
+            return View(walkingList);
         }
 
-        // GET: VolunteeringLists/Edit/5
+        // GET: WalkingLists/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            WalkingList walkingList = db.WalkingLists.Find(id);
+            if (walkingList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(walkingList);
         }
 
-        // POST: VolunteeringLists/Edit/5
+        // POST: WalkingLists/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Edit([Bind(Include = "waId,groupId,waName,waAddress,waSuburb,waPostCode,waState,waLGA,waRegion,waPhone,waEmail,waWeb")] WalkingList walkingList)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(volunteeringList).State = EntityState.Modified;
+                db.Entry(walkingList).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(volunteeringList);
+            return View(walkingList);
         }
 
-        // GET: VolunteeringLists/Delete/5
+        // GET: WalkingLists/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            WalkingList walkingList = db.WalkingLists.Find(id);
+            if (walkingList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(walkingList);
         }
 
-        // POST: VolunteeringLists/Delete/5
+        // POST: WalkingLists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            db.VolunteeringLists.Remove(volunteeringList);
+            WalkingList walkingList = db.WalkingLists.Find(id);
+            db.WalkingLists.Remove(walkingList);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

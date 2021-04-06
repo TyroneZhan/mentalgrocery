@@ -1,25 +1,51 @@
-﻿@model IEnumerable<mentalgrocery.Models.VolunteeringList>
+﻿@model IEnumerable<mentalgrocery.Models.WalkingList>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Index</h2>*@
+@*<h2>Index</h2>
 
-@*<p>
+    <p>
         @Html.ActionLink("Create New", "Create")
     </p>*@
-<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/vo2.jpg);">
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    function fc_nm01() {
+        document.getElementById('name_detail').innerHTML = "B'nai B'rith Ramblers";
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
+        document.getElementById('email_detail').innerHTML = 'Email:enquiries@bbramblers.org.au';
+        document.getElementById('web_detail').innerHTML = 'Web Address:https://www.bbramblers.org.au/';
+    }
+
+    function fc_nm02() {
+        document.getElementById('name_detail').innerHTML = 'Bairnsdale Bushwalking Club Inc.';
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
+        document.getElementById('email_detail').innerHTML = 'Email:No Phone number';
+        document.getElementById('web_detail').innerHTML = 'Web Address:No Website';
+    }
+
+    function fc_nm03() {
+        document.getElementById('name_detail').innerHTML = 'Ballarat U3A Inc.';
+        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
+        document.getElementById('email_detail').innerHTML = 'Email:ballaratbwc@yahoo.com';
+        document.getElementById('web_detail').innerHTML = 'Web Address:https://bboc.com.au/';
+    }
+</script>
+<!-- Start domar_breadcrumb section -->
+<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/hiking2.jpg);">
     <div class="bg_overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_content text-center">
-                    <h2>Volunteering Group</h2>
+                    <h2>Walking Group</h2>
                     <ul>
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="active">Volunteering Group</li>
+                        <li class="active">Walking Group</li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +59,7 @@
             <div class="col-lg-8">
                 <div class="single_course_wrapper">
                     <div class="domar_img">
-                        <img src="/assets/images/vo.jpg" class="img-fluid" alt="">
+                        <img src="/assets/images/hiking.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="container">
                         <table class="table table-hover">
@@ -43,24 +69,27 @@
                                 <th>Postcode</th>
                                 <th>Address</th>
                             </tr>
+
                             @foreach (var item in Model)
                             {
                         <tr>
-                            <td id="voId">
-                                @Html.DisplayFor(modelItem => item.voId)
+                            <td>
+                                @Html.DisplayFor(modelItem => item.waId)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.voName)
+                                @Html.DisplayFor(modelItem => item.waName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.vpPostCode)
+                                @Html.DisplayFor(modelItem => item.waPostCode)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.voAddress)
+                                @Html.DisplayFor(modelItem => item.waAddress)
                             </td>
                         </tr>
                             }
                         </table>
+
+
                     </div>
 
                     <!--<div class="admin_area">
@@ -168,18 +197,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="course_box">
                                     <div class="domar_img">
-                                        <img src="/assets/images/hiking_s.jpg" class="img-fluid" alt="">
+                                        <img src="/assets/images/vo_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/WaGroups">Walking Groups</a></h3>
+                                            <h3><a href="~/Home/VoGroups">Volunteering Groups</a></h3>
                                         </div>
                                         <div class="post_meta">
-                                            <!--<div class="top_info">
-                                            <a href="#" class="author">Location</a>-->
-                                            <!--														<p class="price"><span class="price">$199</span><span class="off_price">120</span></p>
-                                            -->
-                                            <!--</div>-->
                                             <div class="bottom_info">
                                                 <ul>
                                                     <li><span>Recommendation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
@@ -197,18 +221,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="course_box">
                                     <div class="domar_img">
-                                        <img src="/assets/images/ma_s.jpg" class="img-fluid" alt="">
+                                        <img src="/assets/images/canoe_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/MaGroups">Martial Arts Groups</a></h3>
+                                            <h3><a href="~/Home/canoe">Canoes Kayakt Groups</a></h3>
                                         </div>
                                         <div class="post_meta">
-                                            <!--<div class="top_info">
-                                            <a href="~/Home/MaGroups" class="author">Location</a>-->
-                                            <!--														<p class="price"><span class="price">$199</span><span class="off_price">120</span></p>
-                                            -->
-                                            <!--</div>-->
                                             <div class="bottom_info">
                                                 <ul>
                                                     <li><span>Recommendation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
@@ -231,15 +250,15 @@
                 <div class="domar_sidebar">
                     <div class="widget_box search_box">
                         <div class="widget_title">
-                            <h4>Group Name</h4>
+                            <h4>Group nName</h4>
                         </div>
                         <div>
-                            <span id="name_detail">Albury Wodonga Volunteer Resource Centre</span>
+                            <span id="name_detail">B'nai B'rith Ramblers</span>
                         </div>
                     </div>
                     <div class="widget_box">
                         <div class="widget_title">
-                            <h4>Group Information</h4>
+                            <h4>Short Description</h4>
                         </div>
                         <!--<div class="featured_area">
                             <div class="single_news">
@@ -282,9 +301,9 @@
                             <h4>Contact Info</h4>
                         </div>
                         <ul class="widget_list">
-                            <li id="phone_detail">Phone:02 6021 0990</li>
-                            <li id="email_detail">Email:contactus@redcross.org.au</li>
-                            <li id="web_detail">Web Address:https://vrb.org.au/</li>
+                            <li id="phone_detail">Phone:No Phone number</li>
+                            <li id="email_detail">Email:enquiries@bbramblers.org.au</li>
+                            <li id="web_detail">Web Address:https://www.bbramblers.org.au/</li>
                         </ul>
                     </div>
                 </div>
@@ -293,3 +312,86 @@
     </div>
 </section><!-- End domar_single_course section -->
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.groupId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waSuburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waPostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waLGA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waRegion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.waWeb)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.groupId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waSuburb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waPostCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waLGA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waRegion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.waWeb)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.waId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.waId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.waId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -10,107 +10,107 @@ using mentalgrocery.Models;
 
 namespace mentalgrocery.Controllers
 {
-    public class VolunteeringListsController : Controller
+    public class CanoesKayaktsListsController : Controller
     {
         private webModels db = new webModels();
 
-        // GET: VolunteeringLists
+        // GET: CanoesKayaktsLists
         public ActionResult Index()
         {
-            return View(db.VolunteeringLists.ToList());
+            return View(db.CanoesKayaktsLists.ToList());
         }
 
-        // GET: VolunteeringLists/Details/5
+        // GET: CanoesKayaktsLists/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            CanoesKayaktsList canoesKayaktsList = db.CanoesKayaktsLists.Find(id);
+            if (canoesKayaktsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(canoesKayaktsList);
         }
 
-        // GET: VolunteeringLists/Create
+        // GET: CanoesKayaktsLists/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: VolunteeringLists/Create
+        // POST: CanoesKayaktsLists/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Create([Bind(Include = "ckId,groupId,ckName,ckAddress,ckSuburb,ckPostCode,ckState,ckLGA,ckRegion,ckPhone,ckEmail,ckWeb")] CanoesKayaktsList canoesKayaktsList)
         {
             if (ModelState.IsValid)
             {
-                db.VolunteeringLists.Add(volunteeringList);
+                db.CanoesKayaktsLists.Add(canoesKayaktsList);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(volunteeringList);
+            return View(canoesKayaktsList);
         }
 
-        // GET: VolunteeringLists/Edit/5
+        // GET: CanoesKayaktsLists/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            CanoesKayaktsList canoesKayaktsList = db.CanoesKayaktsLists.Find(id);
+            if (canoesKayaktsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(canoesKayaktsList);
         }
 
-        // POST: VolunteeringLists/Edit/5
+        // POST: CanoesKayaktsLists/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Edit([Bind(Include = "ckId,groupId,ckName,ckAddress,ckSuburb,ckPostCode,ckState,ckLGA,ckRegion,ckPhone,ckEmail,ckWeb")] CanoesKayaktsList canoesKayaktsList)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(volunteeringList).State = EntityState.Modified;
+                db.Entry(canoesKayaktsList).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(volunteeringList);
+            return View(canoesKayaktsList);
         }
 
-        // GET: VolunteeringLists/Delete/5
+        // GET: CanoesKayaktsLists/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            CanoesKayaktsList canoesKayaktsList = db.CanoesKayaktsLists.Find(id);
+            if (canoesKayaktsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(canoesKayaktsList);
         }
 
-        // POST: VolunteeringLists/Delete/5
+        // POST: CanoesKayaktsLists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            db.VolunteeringLists.Remove(volunteeringList);
+            CanoesKayaktsList canoesKayaktsList = db.CanoesKayaktsLists.Find(id);
+            db.CanoesKayaktsLists.Remove(canoesKayaktsList);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

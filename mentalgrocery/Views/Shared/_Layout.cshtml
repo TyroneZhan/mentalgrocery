@@ -87,11 +87,11 @@
                             <nav class="main_menu">
                                 <ul>
                                     <li>
-                                        <a href="~/Home/Index">Home</a>
+                                        <a>@Html.ActionLink("Home","Index","Home")</a>
                                        
                                     </li>
                                     <li>
-                                        <a href="~/Home/Groups">Groups</a>
+                                        <a">@Html.ActionLink("Groups", "Index", "GroupLists")</a>
                                         @*<ul class="sub-menu">
                                             <li><a href="~/Home/Groups">Groups</a></li>
                                             <li><a href="~/Home/SingleGroup">Groups Details</a></li>
@@ -179,7 +179,7 @@
     <div>
         @RenderBody()
         <hr />
-        <footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
+        @*<footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
             <div class="bg_overlay"></div>
             <div class="container">
                 <div class="footer_widget_wrapper">
@@ -292,7 +292,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer>*@
     </div>
     <!-- End domar_footer section -->
     <!-- scroll_top -->

@@ -10,107 +10,107 @@ using mentalgrocery.Models;
 
 namespace mentalgrocery.Controllers
 {
-    public class VolunteeringListsController : Controller
+    public class MartialArtsListsController : Controller
     {
         private webModels db = new webModels();
 
-        // GET: VolunteeringLists
+        // GET: MartialArtsLists
         public ActionResult Index()
         {
-            return View(db.VolunteeringLists.ToList());
+            return View(db.MartialArtsLists.ToList());
         }
 
-        // GET: VolunteeringLists/Details/5
+        // GET: MartialArtsLists/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            MartialArtsList martialArtsList = db.MartialArtsLists.Find(id);
+            if (martialArtsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(martialArtsList);
         }
 
-        // GET: VolunteeringLists/Create
+        // GET: MartialArtsLists/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: VolunteeringLists/Create
+        // POST: MartialArtsLists/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Create([Bind(Include = "maId,groupId,maName,maAddress,maSuburb,maPostCode,maState,maLGA,maRegion,maPhone,maEmail,maWeb")] MartialArtsList martialArtsList)
         {
             if (ModelState.IsValid)
             {
-                db.VolunteeringLists.Add(volunteeringList);
+                db.MartialArtsLists.Add(martialArtsList);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(volunteeringList);
+            return View(martialArtsList);
         }
 
-        // GET: VolunteeringLists/Edit/5
+        // GET: MartialArtsLists/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            MartialArtsList martialArtsList = db.MartialArtsLists.Find(id);
+            if (martialArtsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(martialArtsList);
         }
 
-        // POST: VolunteeringLists/Edit/5
+        // POST: MartialArtsLists/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "voId,groupId,voName,voAddress,voSuburb,vpPostCode,vpState,voLGA,voRegion,voPhone,voEmail,voWeb")] VolunteeringList volunteeringList)
+        public ActionResult Edit([Bind(Include = "maId,groupId,maName,maAddress,maSuburb,maPostCode,maState,maLGA,maRegion,maPhone,maEmail,maWeb")] MartialArtsList martialArtsList)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(volunteeringList).State = EntityState.Modified;
+                db.Entry(martialArtsList).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(volunteeringList);
+            return View(martialArtsList);
         }
 
-        // GET: VolunteeringLists/Delete/5
+        // GET: MartialArtsLists/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            if (volunteeringList == null)
+            MartialArtsList martialArtsList = db.MartialArtsLists.Find(id);
+            if (martialArtsList == null)
             {
                 return HttpNotFound();
             }
-            return View(volunteeringList);
+            return View(martialArtsList);
         }
 
-        // POST: VolunteeringLists/Delete/5
+        // POST: MartialArtsLists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            VolunteeringList volunteeringList = db.VolunteeringLists.Find(id);
-            db.VolunteeringLists.Remove(volunteeringList);
+            MartialArtsList martialArtsList = db.MartialArtsLists.Find(id);
+            db.MartialArtsLists.Remove(martialArtsList);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

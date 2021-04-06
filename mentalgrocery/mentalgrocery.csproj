@@ -128,8 +128,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CanoesKayaktsListsController.cs" />
+    <Compile Include="Controllers\GroupListsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MartialArtsListsController.cs" />
     <Compile Include="Controllers\VolunteeringListsController.cs" />
+    <Compile Include="Controllers\WalkingListsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,15 +283,35 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Groups.cshtml" />
     <Content Include="Views\Home\SingleGroup.cshtml" />
+    <Content Include="Views\Home\VoGroups.cshtml" />
+    <Content Include="Views\Home\WaGroups.cshtml" />
+    <Content Include="Views\Home\MaGroups.cshtml" />
+    <Content Include="Views\Home\CkGroups.cshtml" />
     <Content Include="Views\VolunteeringLists\Create.cshtml" />
     <Content Include="Views\VolunteeringLists\Delete.cshtml" />
     <Content Include="Views\VolunteeringLists\Details.cshtml" />
     <Content Include="Views\VolunteeringLists\Edit.cshtml" />
     <Content Include="Views\VolunteeringLists\Index.cshtml" />
-    <Content Include="Views\Home\VoGroups.cshtml" />
-    <Content Include="Views\Home\WaGroups.cshtml" />
-    <Content Include="Views\Home\MaGroups.cshtml" />
-    <Content Include="Views\Home\CkGroups.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\Create.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\Delete.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\Details.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\Edit.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\Index.cshtml" />
+    <Content Include="Views\GroupLists\Create.cshtml" />
+    <Content Include="Views\GroupLists\Delete.cshtml" />
+    <Content Include="Views\GroupLists\Details.cshtml" />
+    <Content Include="Views\GroupLists\Edit.cshtml" />
+    <Content Include="Views\GroupLists\Index.cshtml" />
+    <Content Include="Views\MartialArtsLists\Create.cshtml" />
+    <Content Include="Views\MartialArtsLists\Delete.cshtml" />
+    <Content Include="Views\MartialArtsLists\Details.cshtml" />
+    <Content Include="Views\MartialArtsLists\Edit.cshtml" />
+    <Content Include="Views\MartialArtsLists\Index.cshtml" />
+    <Content Include="Views\WalkingLists\Create.cshtml" />
+    <Content Include="Views\WalkingLists\Delete.cshtml" />
+    <Content Include="Views\WalkingLists\Details.cshtml" />
+    <Content Include="Views\WalkingLists\Edit.cshtml" />
+    <Content Include="Views\WalkingLists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\frotend01\v16\" />
