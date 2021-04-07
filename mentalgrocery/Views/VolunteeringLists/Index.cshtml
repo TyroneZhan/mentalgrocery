@@ -42,6 +42,7 @@
                                 <th>Group Name</th>
                                 <th>Postcode</th>
                                 <th>Address</th>
+                                <th>Options</th>
                             </tr>
                             @foreach (var item in Model)
                             {
@@ -57,6 +58,9 @@
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.voAddress)
+                            </td>
+                            <td>
+                                @Html.ActionLink("More Details", "Details", new {id=item.voId})
                             </td>
                         </tr>
                             }
@@ -159,30 +163,28 @@
                             </div>
                         </div>
                     </div>-->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="domar_sidebar">
                     <div class="recent_course course_style_v1">
                         <div class="title">
                             <span>Related Groups</span>
-                            <h4>There are variations Available</h4>
+                            <h5>There are variations Available</h5>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="course_box">
                                     <div class="domar_img">
                                         <img src="/assets/images/hiking_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/WaGroups">Walking Groups</a></h3>
+                                            <h3>@Html.ActionLink("Walking Groups", "Index", "WalkingLists")</h3>
                                         </div>
                                         <div class="post_meta">
-                                            <!--<div class="top_info">
-                                            <a href="#" class="author">Location</a>-->
-                                            <!--														<p class="price"><span class="price">$199</span><span class="off_price">120</span></p>
-                                            -->
-                                            <!--</div>-->
                                             <div class="bottom_info">
                                                 <ul>
-                                                    <li><span>Recommendation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li><span>Recommendation: &nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
@@ -193,25 +195,19 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
+
                                 <div class="course_box">
                                     <div class="domar_img">
                                         <img src="/assets/images/ma_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/MaGroups">Martial Arts Groups</a></h3>
+                                            <h3>@Html.ActionLink("Martial Arts Groups", "Index", "MartialArtsLists")</h3>
                                         </div>
                                         <div class="post_meta">
-                                            <!--<div class="top_info">
-                                            <a href="~/Home/MaGroups" class="author">Location</a>-->
-                                            <!--														<p class="price"><span class="price">$199</span><span class="off_price">120</span></p>
-                                            -->
-                                            <!--</div>-->
                                             <div class="bottom_info">
                                                 <ul>
-                                                    <li><span>Recommendation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li><span>Recommendation:&nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
@@ -222,71 +218,66 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                </div>
+                    <!--<div class="widget_box search_box">
+        <div class="widget_title">
+            <h4>Group Name</h4>
+        </div>
+        <div>
+            <span id="name_detail">Albury Wodonga Volunteer Resource Centre</span>
+        </div>
+    </div>
+    <div class="widget_box">-->
+                    @*<div class="widget_title">
+            <h4>Group Information</h4>
+        </div>*@
+                    <!--<div class="featured_area">
+        <div class="single_news">
+            <div class="news_thumb">
+                <a href="#"><img src="assets/images/thumb_2.jpg" class="img-fluid" alt=""></a>
             </div>
-            <div class="col-lg-4">
-                <div class="domar_sidebar">
-                    <div class="widget_box search_box">
-                        <div class="widget_title">
-                            <h4>Group Name</h4>
-                        </div>
-                        <div>
-                            <span id="name_detail">Albury Wodonga Volunteer Resource Centre</span>
-                        </div>
-                    </div>
-                    <div class="widget_box">
-                        <div class="widget_title">
-                            <h4>Group Information</h4>
-                        </div>
-                        <!--<div class="featured_area">
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_2.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_3.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_4.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
-                    <div class="widget_box categories_box">
-                        <div class="widget_title">
-                            <h4>Map</h4>
-                        </div>
-                        <span>navigate map from google api</span>
-                    </div>
-                    <div class="widget_box tags_box">
-                        <div class="widget_title">
-                            <h4>Contact Info</h4>
-                        </div>
-                        <ul class="widget_list">
-                            <li id="phone_detail">Phone:02 6021 0990</li>
-                            <li id="email_detail">Email:contactus@redcross.org.au</li>
-                            <li id="web_detail">Web Address:https://vrb.org.au/</li>
-                        </ul>
-                    </div>
+            <div class="news_info">
+                <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                <p><a href="#" class="date">Dec 6th, 2019</a></p>
+            </div>
+        </div>
+        <div class="single_news">
+            <div class="news_thumb">
+                <a href="#"><img src="assets/images/thumb_3.jpg" class="img-fluid" alt=""></a>
+            </div>
+            <div class="news_info">
+                <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                <p><a href="#" class="date">Dec 6th, 2019</a></p>
+            </div>
+        </div>
+        <div class="single_news">
+            <div class="news_thumb">
+                <a href="#"><img src="assets/images/thumb_4.jpg" class="img-fluid" alt=""></a>
+            </div>
+            <div class="news_info">
+                <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
+                <p><a href="#" class="date">Dec 6th, 2019</a></p>
+            </div>
+        </div>
+    </div>-->
+                    <!--</div>
+    <div class="widget_box categories_box">
+        <div class="widget_title">
+            <h4>Map</h4>
+        </div>
+        <span>navigate map from google api</span>
+    </div>
+    <div class="widget_box tags_box">
+        <div class="widget_title">
+            <h4>Contact Info</h4>
+        </div>
+        <ul class="widget_list">
+            <li id="phone_detail">Phone:02 6021 0990</li>
+            <li id="email_detail">Email:contactus@redcross.org.au</li>
+            <li id="web_detail">Web Address:https://vrb.org.au/</li>
+        </ul>
+    </div>-->
                 </div>
             </div>
         </div>

@@ -5,90 +5,235 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.groupId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maSuburb)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maPostCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maState)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maLGA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maRegion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maPhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.maWeb)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<!-- Start domar_breadcrumb section -->
+<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/ma2.jpg);">
+    <div class="bg_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>Martial Arts Group</h2>
+                    <ul>
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="active">Martial Arts Group</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_breadcrumb section -->
+<!-- Start domar_single_course section -->
+<section class="domar_single_course section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="single_course_wrapper">
+                    <div class="domar_img">
+                        <img src="/assets/images/ma.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="container">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Group Name</th>
+                                    <th>Postcode</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.maId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.maName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.maPostCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.maAddress)
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.groupId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maSuburb)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maPostCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maState)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maLGA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maRegion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maPhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.maWeb)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.maId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.maId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.maId })
-        </td>
-    </tr>
-}
+                    </div>
 
-</table>
+                    <!--<div class="admin_area">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="admin_box">
+                                    <div class="admin_thumb">
+                                        <img src="assets/images/admin_1.jpg" class="img-fluid" alt="">
+                                    </div>
+                                    <div class="admin_info">
+                                        <h4>Sara Tylor</h4>
+                                        <h6>Graphics Instructor</h6>
+                                        <ul>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><i class="fas fa-star"></i></li>
+                                            <li><a href="#"> 4.9 (66 ratings)</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="price_area">
+                                    <div class="price_tag">
+                                        <h4><span>$169</span>$159</h4>
+                                    </div>
+                                    <div class="buy_button">
+                                        <a href="#" class="domar_btn">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                    <!--<div class="discription_area">-->
+                    <!-- Nav tabs -->
+                    <!--<div class="discription_tab">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#activities">Activities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
+                            </li>
+                        </ul>
+                    </div>-->
+                    <!-- Tab panes -->
+                    <!--<div class="tab-content">
+                            <div id="overview" class="tab-pane active">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="curriculum" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="instructor" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                            <div id="reviews" class="tab-pane fade">
+                                <div class="domar_content_box">
+                                    <h4>Course Summery</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
+                                <div class="domar_content_box">
+                                    <h4>Access on mobile and TV</h4>
+                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="domar_sidebar">
+                    <div class="recent_course course_style_v1">
+                        <div class="title">
+                            <span>Related Groups</span>
+                            <h5>There are variations Available</h5>
+                        </div>
+                        <div class="row">
+                            <div class="course_box">
+                                <div class="domar_img">
+                                    <img src="/assets/images/hiking_s.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="domar_info">
+                                    <div class="post_title">
+                                        <h3>@Html.ActionLink("Walking Groups", "Index", "WalkingLists")</h3>
+                                    </div>
+                                    <div class="post_meta">
+                                        <div class="bottom_info">
+                                            <ul>
+                                                <li><span>Recommendation: &nbsp;&nbsp; </span></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course_box">
+                                <div class="domar_img">
+                                    <img src="/assets/images/vo_s.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="domar_info">
+                                    <div class="post_title">
+                                        <h3>@Html.ActionLink("Volunteering Groups", "Index", "VolunteeringLists")</h3>
+                                    </div>
+                                    <div class="post_meta">
+                                        <div class="bottom_info">
+                                            <ul>
+                                                <li><span>Recommendation:&nbsp;&nbsp; </span></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                                <li class="star"></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_single_course section -->
+
+@*<section class="domar_single_course section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391565.2558546159!2d116.11727013234623!3d39.9390731255796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f05296e7142cb9%3A0xb9625620af0fa98a!2z5Lit5Zu95YyX5Lqs5biC!5e0!3m2!1szh-CN!2sjp!4v1499172397317" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>*@

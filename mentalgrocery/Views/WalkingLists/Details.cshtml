@@ -5,103 +5,113 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/hiking2.jpg);">
+    <div class="bg_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>@Html.DisplayFor(model => model.waName)</h2>
+                    <ul>
+                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="active"><a href="@Url.Action("Index","WalkingLists")">Walking Groups</a></li>
+                        <li class="active">@Html.DisplayFor(model => model.waName)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_breadcrumb section -->
 
-<div>
-    <h4>WalkingList</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.groupId)
-        </dt>
+<section class="domar_contact contact_v1 section_padding">
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.groupId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waSuburb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waSuburb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waPostCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waPostCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waState)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waState)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waLGA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waLGA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waRegion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waRegion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waEmail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.waWeb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.waWeb)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.waId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <div class="contact_form">
+            <form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Group Name</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waName)" name="waName" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Suburb</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waSuburb)" name="waSuburb" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Postcode</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waPostCode)" name="waPostCode" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>State</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waState)" name="waState" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>LGA</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waLGA)" name="waLGA" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Region</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.waRegion)" name="waRegion" readonly>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>address</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.waAddress)
+                            <br>
+                            @Html.DisplayFor(model => model.waSuburb)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>Phone</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.waPhone)
+                            <br /> &nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>Email</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.waEmail)
+                            <br />&nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

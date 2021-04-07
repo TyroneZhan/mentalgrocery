@@ -44,16 +44,16 @@
     <!-- End search wrapper -->
     <!-- Start preloader area -->
     @*<div class="preloader_area">
-        <div class="spinner">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-            <div class="line4"></div>
-            <div class="line5"></div>
-            <div class="line6"></div>
-            <div class="line7"></div>
-        </div>
-    </div>*@
+            <div class="spinner">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+                <div class="line4"></div>
+                <div class="line5"></div>
+                <div class="line6"></div>
+                <div class="line7"></div>
+            </div>
+        </div>*@
     <!-- End preloader area -->
     <div class="header_top_bar">
         <div class="container">
@@ -79,7 +79,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="site_logo">
-                            <a href="~/Home/Index"><img src="/assets/images/logo_mental.png" alt=""></a>
+                            <a href="@Url.Action("Index","Home")"><img src="assets/images/logo_mental.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-10">
@@ -87,15 +87,15 @@
                             <nav class="main_menu">
                                 <ul>
                                     <li>
-                                        <a>@Html.ActionLink("Home","Index","Home")</a>
-                                       
+                                        <a href="@Url.Action("Index","Home")">Home</a>
+                                        <!--<ul class="sub-menu">
+                                            <li><a href="index.html">Home v1</a></li>
+                                            <li><a href="home_v2.html">Home v2</a></li>
+                                            <li><a href="home_v3.html">Home v3</a></li>
+                                        </ul>-->
                                     </li>
                                     <li>
-                                        <a">@Html.ActionLink("Groups", "Index", "GroupLists")</a>
-                                        @*<ul class="sub-menu">
-                                            <li><a href="~/Home/Groups">Groups</a></li>
-                                            <li><a href="~/Home/SingleGroup">Groups Details</a></li>
-                                        </ul>*@
+                                        <a href="@Url.Action("Index","GroupLists")">Groups</a>
                                     </li>
                                     <!--<li><a href="#">Pages</a>
                                         <ul class="sub-menu">
@@ -124,7 +124,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-6">
                         <div class="brand_logo">
-                            <a href="~/Home/Index"><img src="/assets/images/logo_mental.png" class="img-fluid" alt=""></a>
+                            <a href="index.html"><img src="assets/images/logo_mental.png" class="img-fluid" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-6">
@@ -142,7 +142,7 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-item-has-children">
-                            <a href="~/Home/Index">Home</a>
+                            <a href="@Url.Action("Index","Home")">Home</a>
                             <!--<ul class="sub-menu">
                                 <li><a href="index.html">Home v1</a></li>
                                 <li><a href="home_v2.html">Home v2</a></li>
@@ -150,11 +150,7 @@
                             </ul>-->
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="~/Home/Groups">Groups</a>
-                            <ul class="sub-menu">
-                                <li><a href="~/Home/Groups">Groups</a></li>
-                                <li><a href="~/Home/SingleGroup">Groups Details</a></li>
-                            </ul>
+                            <a href="@Url.Action("Index","GroupLists")">Groups</a>
                         </li>
                         <!--<li class="menu-item-has-children"><a href="#">Pages</a>
                             <ul class="sub-menu">
@@ -175,11 +171,12 @@
                 </div>
             </div><!-- mobile_wrapper -->
         </div>
-    </header><!-- End Header area -->
-    <div>
-        @RenderBody()
-        <hr />
-        @*<footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
+    </header>
+    <!-- End Header area -->
+<div>
+    @RenderBody()
+    <hr />
+    @*<footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
             <div class="bg_overlay"></div>
             <div class="container">
                 <div class="footer_widget_wrapper">
@@ -293,32 +290,32 @@
                 </div>
             </div>
         </footer>*@
-    </div>
-    <!-- End domar_footer section -->
-    <!-- scroll_top -->
-    <a id="scroll_top"><i class="fas fa-angle-up"></i></a>
-    <!-- jquery  -->
-    <script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <!--modernizr js-->
-    <script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Popper js -->
-    <script src="/assets/plugin/bootstrap/js/popper.min.js"></script>
-    <!-- slick slider js -->
-    <script src="/assets/plugin/slick/slick.min.js"></script>
-    <!-- magnific popup js -->
-    <script src="/assets/plugin/magnific/jquery.magnific-popup.min.js"></script>
-    <!-- countdown js -->
-    <script src="/assets/plugin/countdown/jquery.countdown.min.js"></script>
-    <!-- jquery ui js -->
-    <script src="/assets/plugin/jquery_ui/jquery-ui.min.js"></script>
-    <!-- nice_select js -->
-    <script src="/assets/plugin/nice_select/jquery.nice-select.min.js"></script>
-    <!-- sidebar_menu js -->
-    <script src="/assets/plugin/sidebar_menu/sidebar-menu.js"></script>
-    <!-- main js -->
-    <script src="/assets/js/main.js"></script>
-    @RenderSection("scripts", required: false)
+</div>
+<!-- End domar_footer section -->
+<!-- scroll_top -->
+<a id="scroll_top"><i class="fas fa-angle-up"></i></a>
+<!-- jquery  -->
+<script src="/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<!--modernizr js-->
+<script src="/assets/js/vendor/modernizr-3.6.0.min.js"></script>
+<!-- bootstrap js -->
+<script src="/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+<!-- Popper js -->
+<script src="/assets/plugin/bootstrap/js/popper.min.js"></script>
+<!-- slick slider js -->
+<script src="/assets/plugin/slick/slick.min.js"></script>
+<!-- magnific popup js -->
+<script src="/assets/plugin/magnific/jquery.magnific-popup.min.js"></script>
+<!-- countdown js -->
+<script src="/assets/plugin/countdown/jquery.countdown.min.js"></script>
+<!-- jquery ui js -->
+<script src="/assets/plugin/jquery_ui/jquery-ui.min.js"></script>
+<!-- nice_select js -->
+<script src="/assets/plugin/nice_select/jquery.nice-select.min.js"></script>
+<!-- sidebar_menu js -->
+<script src="/assets/plugin/sidebar_menu/sidebar-menu.js"></script>
+<!-- main js -->
+<script src="/assets/js/main.js"></script>
+@RenderSection("scripts", required: false)
 </body>
 </html>

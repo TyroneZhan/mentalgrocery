@@ -5,103 +5,114 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<!-- Start domar_breadcrumb section -->
+<section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/vo2.jpg);">
+    <div class="bg_overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb_content text-center">
+                    <h2>@Html.DisplayFor(model => model.voName)</h2>
+                    <ul>
+                        <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                        <li class="active"><a href="@Url.Action("Index","VolunteeringLists")">Volunteering Groups</a></li>
+                        <li class="active">@Html.DisplayFor(model => model.voName)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- End domar_breadcrumb section -->
 
-<div>
-    <h4>VolunteeringList</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.groupId)
-        </dt>
+<section class="domar_contact contact_v1 section_padding">
+    <div class="container">
 
-        <dd>
-            @Html.DisplayFor(model => model.groupId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voAddress)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voSuburb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voSuburb)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.vpPostCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.vpPostCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.vpState)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.vpState)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voLGA)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voLGA)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voRegion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voRegion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voEmail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voEmail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.voWeb)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.voWeb)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.voId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <div class="contact_form">
+            <form>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Group Name</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.voName)" name="voName" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Suburb</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.voSuburb)" name="voSuburb" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Postcode</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.vpPostCode)" name="vpPostCode" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>State</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.vpState)" name="vpState" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>LGA</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.voLGA)" name="voLGA" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form_group">
+                            <p>Region</p>
+                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.voRegion)" name="voRegion" readonly>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>address</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.voAddress)
+                            <br>
+                            @Html.DisplayFor(model => model.voSuburb)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>Phone</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.voPhone)
+                            <br /> &nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="domar_box text-center">
+                    <div class="domar_icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="domar_info">
+                        <h5>Email</h5>
+                        <p>
+                            @Html.DisplayFor(model => model.voEmail)
+                            <br />&nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

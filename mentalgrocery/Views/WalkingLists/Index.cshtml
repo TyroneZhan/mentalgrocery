@@ -188,25 +188,28 @@
                             </div>
                         </div>
                     </div>-->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="domar_sidebar">
                     <div class="recent_course course_style_v1">
                         <div class="title">
                             <span>Related Groups</span>
-                            <h4>There are variations Available</h4>
+                            <h5>There are variations Available</h5>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="course_box">
                                     <div class="domar_img">
                                         <img src="/assets/images/vo_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/VoGroups">Volunteering Groups</a></h3>
+                                            <h3>@Html.ActionLink("Volunteering Groups", "Index", "VolunteeringLists")</h3>
                                         </div>
                                         <div class="post_meta">
                                             <div class="bottom_info">
                                                 <ul>
-                                                    <li><span>Recommendation: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li><span>Recommendation: &nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
@@ -217,20 +220,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12">
                                 <div class="course_box">
                                     <div class="domar_img">
                                         <img src="/assets/images/canoe_s.jpg" class="img-fluid" alt="">
                                     </div>
                                     <div class="domar_info">
                                         <div class="post_title">
-                                            <h3><a href="~/Home/canoe">Canoes Kayakt Groups</a></h3>
+                                            <h3>@Html.ActionLink("Canoes Kayakts Groups", "Index", "CanoesKayaktsLists")</h3>
                                         </div>
                                         <div class="post_meta">
                                             <div class="bottom_info">
                                                 <ul>
-                                                    <li><span>Recommendation:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></li>
+                                                    <li><span>Recommendation:&nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
@@ -241,157 +242,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="domar_sidebar">
-                    <div class="widget_box search_box">
-                        <div class="widget_title">
-                            <h4>Group nName</h4>
-                        </div>
-                        <div>
-                            <span id="name_detail">B'nai B'rith Ramblers</span>
-                        </div>
-                    </div>
-                    <div class="widget_box">
-                        <div class="widget_title">
-                            <h4>Short Description</h4>
-                        </div>
-                        <!--<div class="featured_area">
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_2.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_3.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                            <div class="single_news">
-                                <div class="news_thumb">
-                                    <a href="#"><img src="assets/images/thumb_4.jpg" class="img-fluid" alt=""></a>
-                                </div>
-                                <div class="news_info">
-                                    <h3><a href="single_blog.html">Four Ways To Cheer Up On Blue Monday!</a></h3>
-                                    <p><a href="#" class="date">Dec 6th, 2019</a></p>
-                                </div>
-                            </div>
-                        </div>-->
-                    </div>
-                    <div class="widget_box categories_box">
-                        <div class="widget_title">
-                            <h4>Map</h4>
-                        </div>
-                        <span>navigate map from google api</span>
-                    </div>
-                    <div class="widget_box tags_box">
-                        <div class="widget_title">
-                            <h4>Contact Info</h4>
-                        </div>
-                        <ul class="widget_list">
-                            <li id="phone_detail">Phone:No Phone number</li>
-                            <li id="email_detail">Email:enquiries@bbramblers.org.au</li>
-                            <li id="web_detail">Web Address:https://www.bbramblers.org.au/</li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </section><!-- End domar_single_course section -->
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.groupId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waSuburb)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waPostCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waState)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waLGA)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waRegion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waPhone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waEmail)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.waWeb)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.groupId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waSuburb)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waPostCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waLGA)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waRegion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waPhone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.waWeb)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.waId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.waId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.waId })
-            </td>
-        </tr>
-    }
-
-</table>
