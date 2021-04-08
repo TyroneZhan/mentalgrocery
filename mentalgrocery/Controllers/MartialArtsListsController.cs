@@ -13,15 +13,27 @@ namespace mentalgrocery.Controllers
     public class MartialArtsListsController : Controller
     {
         private webModels db = new webModels();
-
         // GET: MartialArtsLists
-        public ActionResult Index()
+        /* public ActionResult Index()
+         {
+             return View(db.MartialArtsLists.ToList());
+         }*/
+        public ActionResult Index(int pageindex, int pagesize)
         {
-            return View(db.MartialArtsLists.ToList());
+            var user = db.MartialArtsLists.OrderBy(n => n.maId).Skip<MartialArtsList>(pagesize * (pageindex - 1)).Take<MartialArtsList>(2);
+            int total = db.MartialArtsLists.Count();
+            if (total % pagesize == 0)
+            {
+                ViewBag.TotalPage = total / pagesize;
+            }
+            else
+            {
+                ViewBag.TotalPage = total / pagesize + 1;
+            }
+            return View(user);
         }
-
-        // GET: MartialArtsLists/Details/5
-        public ActionResult Details(int? id)
+            // GET: MartialArtsLists/Details/5
+            public ActionResult Details(int? id)
         {
             if (id == null)
             {

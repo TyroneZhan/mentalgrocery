@@ -64,107 +64,121 @@
                                         </td>
                                     </tr>
                                 }
-                            </tbody>
+                                <tr>
+                                </tr>
+                                </tbody>
                         </table>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="domar_pagination text-center">
+                                    <ul>
+                                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                                        {
 
+                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 2 })</li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!--<div class="admin_area">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="admin_box">
-                                    <div class="admin_thumb">
-                                        <img src="assets/images/admin_1.jpg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="admin_info">
-                                        <h4>Sara Tylor</h4>
-                                        <h6>Graphics Instructor</h6>
-                                        <ul>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><a href="#"> 4.9 (66 ratings)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-12">
-                                <div class="price_area">
-                                    <div class="price_tag">
-                                        <h4><span>$169</span>$159</h4>
-                                    </div>
-                                    <div class="buy_button">
-                                        <a href="#" class="domar_btn">Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="admin_box">
+                    <div class="admin_thumb">
+                        <img src="assets/images/admin_1.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="admin_info">
+                        <h4>Sara Tylor</h4>
+                        <h6>Graphics Instructor</h6>
+                        <ul>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><i class="fas fa-star"></i></li>
+                            <li><a href="#"> 4.9 (66 ratings)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="price_area">
+                    <div class="price_tag">
+                        <h4><span>$169</span>$159</h4>
+                    </div>
+                    <div class="buy_button">
+                        <a href="#" class="domar_btn">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
                     <!--<div class="discription_area">-->
                     <!-- Nav tabs -->
                     <!--<div class="discription_tab">
-                        <ul class="nav nav-tabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#activities">Activities</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
-                            </li>
-                        </ul>
-                    </div>-->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#activities">Activities</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
+            </li>
+        </ul>
+    </div>-->
                     <!-- Tab panes -->
                     <!--<div class="tab-content">
-                            <div id="overview" class="tab-pane active">
-                                <div class="domar_content_box">
-                                    <h4>Course Summery</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                                <div class="domar_content_box">
-                                    <h4>Access on mobile and TV</h4>
-                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
-                                </div>
-                            </div>
-                            <div id="curriculum" class="tab-pane fade">
-                                <div class="domar_content_box">
-                                    <h4>Course Summery</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                                <div class="domar_content_box">
-                                    <h4>Access on mobile and TV</h4>
-                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
-                                </div>
-                            </div>
-                            <div id="instructor" class="tab-pane fade">
-                                <div class="domar_content_box">
-                                    <h4>Course Summery</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                                <div class="domar_content_box">
-                                    <h4>Access on mobile and TV</h4>
-                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
-                                </div>
-                            </div>
-                            <div id="reviews" class="tab-pane fade">
-                                <div class="domar_content_box">
-                                    <h4>Course Summery</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                                <div class="domar_content_box">
-                                    <h4>Access on mobile and TV</h4>
-                                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
+            <div id="overview" class="tab-pane active">
+                <div class="domar_content_box">
+                    <h4>Course Summery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="domar_content_box">
+                    <h4>Access on mobile and TV</h4>
+                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                </div>
+            </div>
+            <div id="curriculum" class="tab-pane fade">
+                <div class="domar_content_box">
+                    <h4>Course Summery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="domar_content_box">
+                    <h4>Access on mobile and TV</h4>
+                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                </div>
+            </div>
+            <div id="instructor" class="tab-pane fade">
+                <div class="domar_content_box">
+                    <h4>Course Summery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="domar_content_box">
+                    <h4>Access on mobile and TV</h4>
+                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                </div>
+            </div>
+            <div id="reviews" class="tab-pane fade">
+                <div class="domar_content_box">
+                    <h4>Course Summery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="domar_content_box">
+                    <h4>Access on mobile and TV</h4>
+                    <p>Access mobile deep reinforcement learning algorithms and from Deep Networks to Deep Deterministic Policy Gradients. Apply these concepts to train agents to tv walk, drive, or perform other complex tasks.</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
 
                 </div>
             </div>
@@ -227,13 +241,4 @@
         </div>
     </div>
 </section><!-- End domar_single_course section -->
-
-@*<section class="domar_single_course section_padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d391565.2558546159!2d116.11727013234623!3d39.9390731255796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35f05296e7142cb9%3A0xb9625620af0fa98a!2z5Lit5Zu95YyX5Lqs5biC!5e0!3m2!1szh-CN!2sjp!4v1499172397317" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</section>*@
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15993.117652024752!2d145.02924582730657!3d-37.84610686963065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6420418f5db97%3A0xbbb3303a2799fac!2sPrepSail%20-%20PO%20BOX%207059!5e0!3m2!1sen!2shk!4v1617860125260!5m2!1sen!2shk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>

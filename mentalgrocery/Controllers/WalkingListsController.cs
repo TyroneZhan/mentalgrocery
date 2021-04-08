@@ -14,10 +14,25 @@ namespace mentalgrocery.Controllers
     {
         private webModels db = new webModels();
 
-        // GET: WalkingLists
+        /*// GET: WalkingLists
         public ActionResult Index()
         {
             return View(db.WalkingLists.ToList());
+        }*/
+
+        public ActionResult Index(int pageindex, int pagesize)
+        {
+            var user = db.WalkingLists.OrderBy(n => n.waId).Skip<WalkingList>(pagesize * (pageindex - 1)).Take<WalkingList>(2);
+            int total = db.WalkingLists.Count();
+            if (total % pagesize == 0)
+            {
+                ViewBag.TotalPage = total / pagesize;
+            }
+            else
+            {
+                ViewBag.TotalPage = total / pagesize + 1;
+            }
+            return View(user);
         }
 
         // GET: WalkingLists/Details/5

@@ -15,9 +15,23 @@ namespace mentalgrocery.Controllers
         private webModels db = new webModels();
 
         // GET: VolunteeringLists
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
             return View(db.VolunteeringLists.ToList());
+        }*/
+        public ActionResult Index(int pageindex, int pagesize)
+        {
+            var user = db.VolunteeringLists.OrderBy(n => n.voId).Skip<VolunteeringList>(pagesize * (pageindex - 1)).Take<VolunteeringList>(2);
+            int total = db.VolunteeringLists.Count();
+            if(total%pagesize==0)
+            {
+                ViewBag.TotalPage = total / pagesize;
+            }
+            else
+            {
+                ViewBag.TotalPage = total / pagesize + 1;
+            }
+            return View(user);
         }
 
         // GET: VolunteeringLists/Details/5

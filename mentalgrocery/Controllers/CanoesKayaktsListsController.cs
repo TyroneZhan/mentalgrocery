@@ -15,13 +15,28 @@ namespace mentalgrocery.Controllers
         private webModels db = new webModels();
 
         // GET: CanoesKayaktsLists
-        public ActionResult Index()
+        /*public ActionResult Index()
         {
             return View(db.CanoesKayaktsLists.ToList());
+        }*/
+
+        public ActionResult Index(int pageindex, int pagesize)
+        {
+            var user = db.CanoesKayaktsLists.OrderBy(n => n.ckId).Skip<CanoesKayaktsList>(pagesize * (pageindex - 1)).Take<CanoesKayaktsList>(2);
+            int total = db.CanoesKayaktsLists.Count();
+            if (total % pagesize == 0)
+            {
+                ViewBag.TotalPage = total / pagesize;
+            }
+            else
+            {
+                ViewBag.TotalPage = total / pagesize + 1;
+            }
+            return View(user);
         }
 
-        // GET: CanoesKayaktsLists/Details/5
-        public ActionResult Details(int? id)
+            // GET: CanoesKayaktsLists/Details/5
+            public ActionResult Details(int? id)
         {
             if (id == null)
             {

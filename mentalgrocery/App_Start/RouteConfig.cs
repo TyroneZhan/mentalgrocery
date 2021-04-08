@@ -15,8 +15,9 @@ namespace mentalgrocery
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{controller}/{action}/{pageindex}/{pagesize}",
+                defaults: new { controller = "Home", action = "Index",  pageindex = 1, pagesize = 2
+                }
             );
         }
     }
