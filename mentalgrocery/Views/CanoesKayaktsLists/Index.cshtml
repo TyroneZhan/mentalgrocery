@@ -43,25 +43,29 @@
                                     <th>Group Name</th>
                                     <th>Postcode</th>
                                     <th>Address</th>
+                                    <th>Options</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.groupId)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckPostCode)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckAddress)
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.groupId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ckName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ckPostCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ckAddress)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("More Details", "Details", new { id = item.ckId })
+                                    </td>
+                                </tr>
                                 }
                                 <tr>
                                 </tr>
@@ -74,7 +78,7 @@
                                         @for (int i = 1; i <= ViewBag.TotalPage; i++)
                                         {
 
-                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 2 })</li>
+                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>
                                         }
                                     </ul>
                                 </div>

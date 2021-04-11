@@ -13,28 +13,6 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script>
-    function fc_nm01() {
-        document.getElementById('name_detail').innerHTML = "B'nai B'rith Ramblers";
-        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
-        document.getElementById('email_detail').innerHTML = 'Email:enquiries@bbramblers.org.au';
-        document.getElementById('web_detail').innerHTML = 'Web Address:https://www.bbramblers.org.au/';
-    }
-
-    function fc_nm02() {
-        document.getElementById('name_detail').innerHTML = 'Bairnsdale Bushwalking Club Inc.';
-        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
-        document.getElementById('email_detail').innerHTML = 'Email:No Phone number';
-        document.getElementById('web_detail').innerHTML = 'Web Address:No Website';
-    }
-
-    function fc_nm03() {
-        document.getElementById('name_detail').innerHTML = 'Ballarat U3A Inc.';
-        document.getElementById('phone_detail').innerHTML = 'Phone:No Phone number';
-        document.getElementById('email_detail').innerHTML = 'Email:ballaratbwc@yahoo.com';
-        document.getElementById('web_detail').innerHTML = 'Web Address:https://bboc.com.au/';
-    }
-</script>
 <!-- Start domar_breadcrumb section -->
 <section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/hiking2.jpg);">
     <div class="bg_overlay"></div>
@@ -68,24 +46,28 @@
                                 <th>Group Name</th>
                                 <th>Postcode</th>
                                 <th>Address</th>
+                                <th>Options</th>
                             </tr>
 
                             @foreach (var item in Model)
                             {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.waId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.waName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.waPostCode)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.waAddress)
-                                    </td>
-                                </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.waId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.waName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.waPostCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.waAddress)
+                            </td>
+                            <td>
+                                @Html.ActionLink("More Details", "Details", new { id = item.waId })
+                            </td>
+                        </tr>
                             }
                             <tr>
                             </tr>
@@ -97,7 +79,7 @@
                                         @for (int i = 1; i <= ViewBag.TotalPage; i++)
                                         {
 
-                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 2 })</li>
+                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>
                                         }
                                     </ul>
                                 </div>

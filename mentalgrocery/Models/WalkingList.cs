@@ -44,5 +44,8 @@ namespace mentalgrocery.Models
 
         [StringLength(50)]
         public string waWeb { get; set; }
+
+        [StringLength(400)]
+        public string waEmbedLink { get; set; }
     }
 }

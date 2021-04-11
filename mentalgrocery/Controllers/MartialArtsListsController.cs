@@ -20,7 +20,7 @@ namespace mentalgrocery.Controllers
          }*/
         public ActionResult Index(int pageindex, int pagesize)
         {
-            var user = db.MartialArtsLists.OrderBy(n => n.maId).Skip<MartialArtsList>(pagesize * (pageindex - 1)).Take<MartialArtsList>(2);
+            var user = db.MartialArtsLists.OrderBy(n => n.maId).Skip<MartialArtsList>(pagesize * (pageindex - 1)).Take<MartialArtsList>(10);
             int total = db.MartialArtsLists.Count();
             if (total % pagesize == 0)
             {

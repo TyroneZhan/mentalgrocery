@@ -22,7 +22,7 @@ namespace mentalgrocery.Controllers
 
         public ActionResult Index(int pageindex, int pagesize)
         {
-            var user = db.WalkingLists.OrderBy(n => n.waId).Skip<WalkingList>(pagesize * (pageindex - 1)).Take<WalkingList>(2);
+            var user = db.WalkingLists.OrderBy(n => n.waId).Skip<WalkingList>(pagesize * (pageindex - 1)).Take<WalkingList>(10);
             int total = db.WalkingLists.Count();
             if (total % pagesize == 0)
             {

@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <!-- Start domar_breadcrumb section -->
 <section class="domar_breadcrumb bg_image" style="background-image: url(/assets/images/ma2.jpg);">
     <div class="bg_overlay"></div>
@@ -24,9 +25,21 @@
     </div>
 </section><!-- End domar_breadcrumb section -->
 
+
 <section class="domar_contact contact_v1 section_padding">
     <div class="container">
-
+        <div class="row">
+            <div class="col-lg-12" align="center">
+                @if (Model.maEmbedLink != "null")
+                {
+                    <iframe src="@Html.DisplayFor(model=>model.maEmbedLink)" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                }
+                else
+                {
+                    <h2>Sorry, we cannot find the location for you, you can try to contact this group.</h2>
+                }
+            </div>
+        </div>
         <div class="contact_form">
             <form>
                 <div class="row">

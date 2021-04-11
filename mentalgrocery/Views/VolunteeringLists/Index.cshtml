@@ -74,7 +74,7 @@
                                         @for (int i = 1; i <= ViewBag.TotalPage; i++)
                                         {
 
-                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 2 })</li>
+                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>
                                         }
                                     </ul>
                                 </div>

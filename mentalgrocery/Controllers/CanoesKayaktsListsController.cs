@@ -22,7 +22,7 @@ namespace mentalgrocery.Controllers
 
         public ActionResult Index(int pageindex, int pagesize)
         {
-            var user = db.CanoesKayaktsLists.OrderBy(n => n.ckId).Skip<CanoesKayaktsList>(pagesize * (pageindex - 1)).Take<CanoesKayaktsList>(2);
+            var user = db.CanoesKayaktsLists.OrderBy(n => n.ckId).Skip<CanoesKayaktsList>(pagesize * (pageindex - 1)).Take<CanoesKayaktsList>(10);
             int total = db.CanoesKayaktsLists.Count();
             if (total % pagesize == 0)
             {
