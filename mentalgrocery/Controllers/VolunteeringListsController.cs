@@ -21,7 +21,7 @@ namespace mentalgrocery.Controllers
         }*/
         public ActionResult Index(int pageindex, int pagesize)
         {
-            var user = db.VolunteeringLists.OrderBy(n => n.voId).Skip<VolunteeringList>(pagesize * (pageindex - 1)).Take<VolunteeringList>(2);
+            var user = db.VolunteeringLists.OrderBy(n => n.voId).Skip<VolunteeringList>(pagesize * (pageindex - 1)).Take<VolunteeringList>(10);
             int total = db.VolunteeringLists.Count();
             if(total%pagesize==0)
             {

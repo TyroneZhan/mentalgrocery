@@ -74,7 +74,7 @@
                                         @for (int i = 1; i <= ViewBag.TotalPage; i++)
                                         {
 
-                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 2 })</li>
+                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>
                                         }
                                     </ul>
                                 </div>
@@ -199,14 +199,14 @@
                                         </div>
                                         <div class="post_meta">
                                             <div class="bottom_info">
-                                                <ul>
+                                                @*<ul>
                                                     <li><span>Recommendation: &nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
-                                                </ul>
+                                                </ul>*@
                                             </div>
                                         </div>
                                     </div>
@@ -222,14 +222,14 @@
                                         </div>
                                         <div class="post_meta">
                                             <div class="bottom_info">
-                                                <ul>
+                                                @*<ul>
                                                     <li><span>Recommendation:&nbsp;&nbsp; </span></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
                                                     <li class="star"></li>
-                                                </ul>
+                                                </ul>*@
                                             </div>
                                         </div>
                                     </div>

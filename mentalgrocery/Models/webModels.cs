@@ -8,7 +8,7 @@ namespace mentalgrocery.Models
     public partial class webModels : DbContext
     {
         public webModels()
-            : base("name=webModels")
+            : base("name=mentalgrocery")
         {
         }
 
