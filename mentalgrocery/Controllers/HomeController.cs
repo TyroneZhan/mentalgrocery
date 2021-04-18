@@ -55,5 +55,10 @@ namespace mentalgrocery.Controllers
         {
             return View();
         }
+
+        public ActionResult Insights()
+        {
+            return View();
+        }
     }
 }
