@@ -40,6 +40,13 @@
             height: 4px;
             background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
         }
+        #text-area {
+            background-image: url("/assets/images/Together.jpg");
+            background-position: center 0;
+            background-repeat: no-repeat;
+            background-attachment: initial;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
@@ -109,19 +116,19 @@
                                     <li>
                                         <a href="@Url.Action("Insights","Home")">Insights</a>
                                         @*<ul class="sub-menu">
-                                            <li><a href="about.html">About us</a></li>
-                                            <li><a href="team.html">Our Team</a></li>
-                                            <li><a href="event.html">Event</a></li>
-                                            <li><a href="single_event.html">Event Details</a></li>
-                                        </ul>*@
-                                    </li>
-                                    <!--<li><a href="#">News</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">News</a></li>
-                                            <li><a href="single_blog.html">News Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>-->
+                                        <li><a href="about.html">About us</a></li>
+                                        <li><a href="team.html">Our Team</a></li>
+                                        <li><a href="event.html">Event</a></li>
+                                        <li><a href="single_event.html">Event Details</a></li>
+                                    </ul>*@
+                                                            </li>
+                                                            <!--<li><a href="#">News</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog.html">News</a></li>
+                                    <li><a href="single_blog.html">News Details</a></li>
+                                </ul>
+                            </li>-->
+                                    <li><a href="@Url.Action("About","Home")">About us</a></li>
                                     @*<li class="search"><a href="#" class="search_btn"><i class="fas fa-search"></i></a></li>*@
                                 </ul>
                             </nav>
@@ -186,73 +193,54 @@
 <div>
     @RenderBody()
     <hr />
-    @*<footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
+    <footer class="domar_footer footer_v1 bg_image" style="background-image: url(/assets/images/footer_bg1.jpg);">
             <div class="bg_overlay"></div>
             <div class="container">
                 <div class="footer_widget_wrapper">
-                    <div class="row">
-                        <div class="col-lg-3">
+                    <div class="row align-content-around">
+                        <div class="col-lg-4">
                             <div class="widget_box contact_box">
                                 <div class="widget_title">
-                                    <h4>Get in Touch</h4>
+                                    <h4>Meet Peeps!</h4>
                                 </div>
-                                <div class="contact_wrapper">
-                                    <div class="single_contact">
-                                        <div class="list_icon">
-                                            <i class="fas fa-map-marker-alt"></i>
-                                        </div>
-                                        <div class="list_text">
-                                            <p>Mosoiu Street, A Building, 2nd Entrance</p>
-                                        </div>
-                                    </div>
-                                    <div class="single_contact">
-                                        <div class="list_icon">
-                                            <i class="fas fa-phone-alt"></i>
-                                        </div>
-                                        <div class="list_text">
-                                            <p><a href="tel:+800123456789">+1 800 123 4567</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="single_contact">
-                                        <div class="list_icon">
-                                            <i class="fas fa-envelope"></i>
-                                        </div>
-                                        <div class="list_text">
-                                            <p><a href="mailto:mentalgrocery@mail.com"> example@mail.com</a></p>
-                                        </div>
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="contact_wrapper">
+                                            <div class="site_logo">
+                                                <a href="@Url.Action("Index","Home")"><img src="/assets/images/logo_mental.png" alt=""></a>
+                                            </div>
+                                            <div class="single_contact">
+                                                    <p class="text-left" style="color:aliceblue">We create a colourful world for everyone</p>
+                                            </div>
+                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <div class="widget_box">
                                 <div class="widget_title">
                                     <h4>Quick Links</h4>
                                 </div>
                                 <ul class="widget_link">
-                                    <li><a href="#">Active1</a></li>
-                                    <li><a href="#">Active2</a></li>
-                                    <li><a href="#">Active3</a></li>
-                                    <li><a href="#">Active4</a></li>
-                                    <li><a href="#">Active5</a></li>
+                                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                                    <li><a href="@Url.Action("Index","GroupLists")">Groups</a></li>
+                                    <li><a href="@Url.Action("Insights","Home")">Insights</a></li>
+                                    <li><a href="@Url.Action("About","Home")">About Us</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                        <div class="col-lg-4">
                             <div class="widget_box">
                                 <div class="widget_title">
-                                    <h4>Groups</h4>
+                                    <h4>Follow Us</h4>
                                 </div>
-                                <ul class="widget_link">
-                                    <li><a href="#">Volunteering</a></li>
-                                    <li><a href="#">Hiking</a></li>
-                                    <li><a href="#">Healthy</a></li>
-                                    <li><a href="#">Placeholder</a></li>
-                                    <li><a href="#">Placeholder</a></li>
-                                </ul>
+                                <div class="single_contact">
+                                    <p class="text-left" style="color:aliceblue">Comming Soon</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
+                       @* <div class="col-lg-3">
                             <div class="widget_box">
                                 <div class="widget_title">
                                     <h4>Active Date</h4>
@@ -276,30 +264,31 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <div class="footer_copyright">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="copyright_text">
-                                <p>Copyright &copy; 2020.Company name All rights reserved.</p>
+                                <p>Copyright &copy; 2020.MentalGrocery All rights reserved.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="copyright_link">
                                 <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Service</a></li>
+                                    <li><a href="@Url.Action("About","Index")">About us</a></li>
+                                    @*<li><a href="#">Service</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>*@
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>*@
+                </div>
+        </footer>
 </div>
 <!-- End domar_footer section -->
 <!-- scroll_top -->

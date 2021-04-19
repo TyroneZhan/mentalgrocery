@@ -1,7 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-<!-- Start hero_bg section -->
+﻿<!-- Start hero_bg section -->
 <section class="hero_bg hero_v1 bg_image" style="        background-image: url(/assets/images/hero_bg1.jpg);">
     <div class="bg_overlay"></div>
     <div class="container">
@@ -14,8 +11,8 @@
                         <p>GAIN INSIGHTS! EXPLORE YOUR INTERESTS! BUILD CONNECTIONS!</p>
                     </div>
                     @*<div class="domar_button">
-                        <a href="#" class="domar_btn">Join Us</a>
-                    </div>*@
+                            <a href="#" class="domar_btn">Join Us</a>
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -23,36 +20,104 @@
 </section><!-- End hero_bg section -->
 <!-- Start domar_countdown section -->
 @*<section class="domar_countdown">
-    <div class="domar_offer_box">
-        <div class="row align-items-center">
-            <div class="col-lg-5">
-                <div class="countdown_newsletter">
-                    <h4>Comming activity: <span>Active name</span></h4>
-                    <form>
-                        <div class="form_group">
-                            <input type="email" class="form_control" placeholder="Enter your E-mail" name="email">
-                            <button class="domar_btn">Subscribe</button>
-                        </div>
-                    </form>
+        <div class="domar_offer_box">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="countdown_newsletter">
+                        <h4>Comming activity: <span>Active name</span></h4>
+                        <form>
+                            <div class="form_group">
+                                <input type="email" class="form_control" placeholder="Enter your E-mail" name="email">
+                                <button class="domar_btn">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="offer_countdown_area text-center">
+                        <div class="offer_countdown" data-countdown="2021/04/15"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-7">
-                <div class="offer_countdown_area text-center">
-                    <div class="offer_countdown" data-countdown="2021/04/15"></div>
+        </div>
+    </section>*@
+<!-- End domar_countdown section -->
+
+<section class="domar_blog blog_v2 section_padding" style="padding:20px;margin-bottom:30px;margin-top: 30px;">
+    <div class="container">
+        <div class="row align-items-center justify-content-around">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div style="text-align: left;margin-bottom: 0px;width: 100%;margin: 0 auto">
+                    <p class="text-left">We're here to challenge mental health issues and tackle the loneliness that exist in foreign students. We will focus our resources on the critical areas of mental health and loneliness and concentrate our efforts where we will have the greatest impact and reach.</p>
                 </div>
             </div>
         </div>
     </div>
-</section>*@
-<!-- End domar_countdown section -->
+</section>
+
+<section class="domar_blog blog_v2 section_padding" style="padding:20px;margin-bottom:30px;margin-top: 30px;">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <hr style="height:5px; background:black; border:none">
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4" style="background-color:chocolate">
+                <div style="text-align: left;margin-bottom: 0px;width: 100%;margin: 0 auto">
+                    <p class="text-left" style="color: aliceblue;">We're here to challenge mental health issues and tackle the loneliness that exist in foreign students. We will focus our resources on the critical areas of mental health and loneliness and concentrate our efforts where we will have the greatest impact and reach.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <hr style="height:5px; background:black; border:none">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- our services -->
+<section class="categories_style_v1 section_padding" style="padding:60px">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section_title text-center">
+                    <h2>Our Servicess</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="domar_img" style="float: none;display: block;margin-bottom: 40px;margin-left: auto;margin-right: auto;width: 400px;height: 400px;">
+                    <img src="/assets/images/insight.png" class="img-fluid" alt="">
+                </div>
+                <div class="section_title text-center" style="margin-bottom: 20px;">
+                    <input type="button" value="Gain Insights" onclick="location.href='@Url.Action("Insights","Home")'" class="domar_btn"></input>
+                </div>
+                <div style="text-align: left;margin-bottom: 0px;width: 70%;margin: 0 auto">
+                    <p class="text-left" style="color:black;">What is loneliness? Why do we feel lonely? What can I do to stop feeling lonely? We have answers. Find out more about loneliness here.</p>
+                </div>
+
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+                <div class="domar_img" style="float: none;display: block;margin-bottom: 40px;margin-left: auto;margin-right: auto;width: 400px;height: 400px;">
+                    <img src="/assets/images/connection.png" class="img-fluid" alt="">
+                </div>
+                <div class="section_title text-center" style="margin-bottom: 20px;">
+                    <input type="button" value="Build Connections" onclick="location.href='@Url.Action("Index","GroupLists")'" class="domar_btn"></input>
+                </div>
+                <div style="text-align: left;margin-bottom: 0px;width: 70%;margin: 0 auto">
+                    <p class="text-left" style="color:black;">Looking to connect with others? Feel free to browse through our catalogue of organizations or clubs around Victoria, Australia to connect with other people with the same interests.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Start domar_categories section -->
-<section class="categories_style_v1 section_padding">
+<section class="categories_style_v1 section_padding" style="padding:60px">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="section_title text-center">
                     <h2>Groups categories</h2>
-                    <p>Now we are providing following groups for you<br>Click one for details</p>
+                    <p>Explore your interests and connect with others!<br>Stay engaged!Stay connected!</p>
                 </div>
             </div>
         </div>
@@ -94,41 +159,41 @@
                 </a>
             </div>
             @*<div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_5.jpg);">
-                    <span class="bg_overlay"></span>
-                    <div class="domar_content">
-                        <h4>Video Game</h4>
-                        <h6>Over 100 groups</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_6.jpg);">
-                    <span class="bg_overlay"></span>
-                    <div class="domar_content">
-                        <h4>Drawing</h4>
-                        <h6>Over 100 groups</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_7.jpg);">
-                    <span class="bg_overlay"></span>
-                    <div class="domar_content">
-                        <h4>Placeholder</h4>
-                        <h6>Over 100 groups</h6>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_8.jpg);">
-                    <span class="bg_overlay"></span>
-                    <div class="domar_content">
-                        <h4>Placeholder</h4>
-                        <h6>Over 100 groups</h6>
-                    </div>
-                </a>
-            </div>*@
+                    <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_5.jpg);">
+                        <span class="bg_overlay"></span>
+                        <div class="domar_content">
+                            <h4>Video Game</h4>
+                            <h6>Over 100 groups</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_6.jpg);">
+                        <span class="bg_overlay"></span>
+                        <div class="domar_content">
+                            <h4>Drawing</h4>
+                            <h6>Over 100 groups</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_7.jpg);">
+                        <span class="bg_overlay"></span>
+                        <div class="domar_content">
+                            <h4>Placeholder</h4>
+                            <h6>Over 100 groups</h6>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="#" class="categorie_box bg_image" style="background-image: url(/assets/images/cat_8.jpg);">
+                        <span class="bg_overlay"></span>
+                        <div class="domar_content">
+                            <h4>Placeholder</h4>
+                            <h6>Over 100 groups</h6>
+                        </div>
+                    </a>
+                </div>*@
         </div>
     </div>
 </section><!-- End domar_categories section -->
@@ -499,51 +564,51 @@
 <!-- End domar_why_choose section -->
 <!-- Start domar_blog section -->
 @*<section class="domar_blog blog_style_v1 section_padding gray_bg">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="section_title text-center">
-                    <h2>Latest News</h2>
-                    <p>News about recent activities<br></p>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center">
+                        <h2>Latest News</h2>
+                        <p>News about recent activities<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="blog_box" style="background-image: url(/assets/images/blog_1.jpg);">
+                        <div class="bg_overlay"></div>
+                        <div class="blog_info">
+                            <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
+                            <h3><a href="#">News 1</a></h3>
+                            <a href="#" class="btn_link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="blog_list_wrapper">
+                        <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
+                            <div class="bg_overlay"></div>
+                            <div class="blog_info">
+                                <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
+                                <h3><a href="#">News 2</a></h3>
+                            </div>
+                        </div>
+                        <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
+                            <div class="bg_overlay"></div>
+                            <div class="blog_info">
+                                <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
+                                <h3><a href="#">News 3</a></h3>
+                            </div>
+                        </div>
+                        <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
+                            <div class="bg_overlay"></div>
+                            <div class="blog_info">
+                                <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
+                                <h3><a href="#">News 4</a></h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="blog_box" style="background-image: url(/assets/images/blog_1.jpg);">
-                    <div class="bg_overlay"></div>
-                    <div class="blog_info">
-                        <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
-                        <h3><a href="#">News 1</a></h3>
-                        <a href="#" class="btn_link">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="blog_list_wrapper">
-                    <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
-                        <div class="bg_overlay"></div>
-                        <div class="blog_info">
-                            <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
-                            <h3><a href="#">News 2</a></h3>
-                        </div>
-                    </div>
-                    <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
-                        <div class="bg_overlay"></div>
-                        <div class="blog_info">
-                            <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
-                            <h3><a href="#">News 3</a></h3>
-                        </div>
-                    </div>
-                    <div class="blog_box_2 bg_image" style="background-image: url(/assets/images/blog_2.jpg);">
-                        <div class="bg_overlay"></div>
-                        <div class="blog_info">
-                            <a href="#" class="date"><i class="fas fa-calendar-alt"></i>August 10, 2019</a>
-                            <h3><a href="#">News 4</a></h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>*@
+    </section>*@
