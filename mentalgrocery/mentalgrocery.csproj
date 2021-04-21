@@ -220,7 +220,7 @@
     <Content Include="assets\images\Causes.png" />
     <Content Include="assets\images\choose_1.jpg" />
     <Content Include="assets\images\client_bg.jpg" />
-    <Content Include="assets\images\connection.png" />
+    <Content Include="assets\images\connection1.png" />
     <Content Include="assets\images\course_1.jpg" />
     <Content Include="assets\images\course_2.jpg" />
     <Content Include="assets\images\course_3.jpg" />
@@ -233,7 +233,7 @@
     <Content Include="assets\images\hiking.jpg" />
     <Content Include="assets\images\hiking2.jpg" />
     <Content Include="assets\images\hiking_s.jpg" />
-    <Content Include="assets\images\insight.png" />
+    <Content Include="assets\images\insight1.png" />
     <Content Include="assets\images\joined_bg1.jpg" />
     <Content Include="assets\images\logo_2.png" />
     <Content Include="assets\images\logo_mental.png" />
