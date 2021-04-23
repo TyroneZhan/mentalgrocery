@@ -30,16 +30,15 @@
 <section class="domar_single_course section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="single_course_wrapper">
                     <div class="domar_img">
                         <img src="/assets/images/canoe.jpg" class="img-fluid" alt="">
                     </div>
-                    <div class="container">
-                        <table class="table table-hover">
+                    <div class="container" style="padding:0px">
+                        <table class="table table-hover"  style="table-layout: fixed;text-align:center" width="100%" cellspacing="0" cellpadding="1">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Group Name</th>
                                     <th>Postcode</th>
                                     <th>Address</th>
@@ -50,9 +49,6 @@
                                 @foreach (var item in Model)
                                 {
                                 <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.groupId)
-                                    </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.ckName)
                                     </td>

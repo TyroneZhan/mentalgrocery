@@ -237,10 +237,12 @@
     <Content Include="assets\images\joined_bg1.jpg" />
     <Content Include="assets\images\logo_2.png" />
     <Content Include="assets\images\logo_mental.png" />
+    <Content Include="assets\images\logo_mental_2.png" />
     <Content Include="assets\images\ma.jpg" />
     <Content Include="assets\images\ma2.jpg" />
     <Content Include="assets\images\ma_s.jpg" />
-    <Content Include="assets\images\Mental_Grocery.png" />
+    <Content Include="assets\images\Mental_Grocery.jpg" />
+    <Content Include="assets\images\Mental_Grocery_2.png" />
     <Content Include="assets\images\SadPassivity.jpg" />
     <Content Include="assets\images\scholarship_bg.jpg" />
     <Content Include="assets\images\sign.png" />

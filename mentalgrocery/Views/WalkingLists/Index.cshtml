@@ -34,44 +34,44 @@
 <section class="domar_single_course section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="single_course_wrapper">
                     <div class="domar_img">
                         <img src="/assets/images/hiking.jpg" class="img-fluid" alt="">
                     </div>
-                    <div class="container">
-                        <table class="table table-hover">
-                            <tr>
-                                <th>#</th>
-                                <th>Group Name</th>
-                                <th>Postcode</th>
-                                <th>Address</th>
-                                <th>Options</th>
-                            </tr>
-
-                            @foreach (var item in Model)
-                            {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.waId)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.waName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.waPostCode)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.waAddress)
-                            </td>
-                            <td>
-                                @Html.ActionLink("More Details", "Details", new { id = item.waId })
-                            </td>
-                        </tr>
-                            }
+                    <div class="container" style="padding:0px">
+                        <table class="table table-hover" style="table-layout: fixed;text-align:center" width="100%" cellspacing="0" cellpadding="1" >
+                            <thead>
+                                <tr>
+                                    <th>Group Name</th>
+                                    <th>Postcode</th>
+                                    <th>Address</th>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.waName)
+                                        </td>
+                                        <td style="text-align:center">
+                                            @Html.DisplayFor(modelItem => item.waPostCode)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.waAddress)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("More Details", "Details", new { id = item.waId })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
                             <tr>
                             </tr>
                         </table>
+                        </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="domar_pagination text-center">
@@ -87,7 +87,7 @@
                         </div>
                     </div>
 
-                    <!--<div class="admin_area">
+                        <!--<div class="admin_area">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="admin_box">
@@ -120,9 +120,9 @@
             </div>
         </div>
     </div>-->
-                    <!--<div class="discription_area">-->
-                    <!-- Nav tabs -->
-                    <!--<div class="discription_tab">
+                        <!--<div class="discription_area">-->
+                        <!-- Nav tabs -->
+                        <!--<div class="discription_tab">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#overview">Overview</a>
@@ -135,8 +135,8 @@
             </li>
         </ul>
     </div>-->
-                    <!-- Tab panes -->
-                    <!--<div class="tab-content">
+                        <!-- Tab panes -->
+                        <!--<div class="tab-content">
             <div id="overview" class="tab-pane active">
                 <div class="domar_content_box">
                     <h4>Course Summery</h4>
@@ -183,9 +183,8 @@
             </div>
         </div>
     </div>-->
-                </div>
-            </div>
-            <div class="col-lg-4">
+                    </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="domar_sidebar">
                     <div class="recent_course course_style_v1">
                         <div class="title">
