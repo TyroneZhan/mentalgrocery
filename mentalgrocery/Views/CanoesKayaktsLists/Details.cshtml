@@ -27,7 +27,7 @@
 <section class="domar_contact contact_v1 section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12" align="center">
+            <div class="col-lg-12" align="center"  style="margin-bottom:20px">
                 @if (Model.ckEmbedLink != "null")
                 {
                     <iframe src="@Html.DisplayFor(model=>model.ckEmbedLink)" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -42,40 +42,52 @@
             <form>
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Group Name</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckName)" name="ckName" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>Group Name</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckName)</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Suburb</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckSuburb)" name="ckSuburb" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>Suburb</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckSuburb)</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Postcode</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckPostCode)" name="ckPostCode" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>Postcode</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckPostCode)</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>State</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckState)" name="ckState" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>Address</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckAddress)</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>LGA</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckLGA)" name="ckLGA" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>LGA</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckLGA)</td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Region</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.ckRegion)" name="ckRegion" readonly>
-                        </div>
+                        <table class="table table-bordered">
+                            <th>Regeion</th>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.ckRegion)</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </form>
@@ -84,15 +96,20 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="domar_box text-center">
                     <div class="domar_icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fab fa-internet-explorer"></i>
                     </div>
                     <div class="domar_info">
-                        <h5>address</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.ckAddress)
-                            <br>
-                            @Html.DisplayFor(model => model.ckSuburb)
-                        </p>
+                        <h5>Website</h5>
+                        @if (Model.ckWeb == "null")
+                        {
+                            <p>Sorry, this group has no website.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.ckWeb)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>
@@ -103,10 +120,16 @@
                     </div>
                     <div class="domar_info">
                         <h5>Phone</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.ckPhone)
-                            <br /> &nbsp;
-                        </p>
+                        @if (Model.ckPhone == "null")
+                        {
+                            <p>Sorry, this group has no contact number.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.ckPhone)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>
@@ -117,10 +140,16 @@
                     </div>
                     <div class="domar_info">
                         <h5>Email</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.ckEmail)
-                            <br />&nbsp;
-                        </p>
+                        @if (Model.ckEmail == "null")
+                        {
+                            <p>Sorry, this group has no email.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.ckEmail)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>

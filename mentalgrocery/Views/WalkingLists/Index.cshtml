@@ -40,7 +40,7 @@
                         <img src="/assets/images/hiking.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="container" style="padding:0px">
-                        <table class="table table-hover" style="table-layout: fixed;text-align:center" width="100%" cellspacing="0" cellpadding="1" >
+                        <table class="table table-hover" style=" table-layout: fixed;text-align: center; border-bottom: solid;border-bottom: solid" width="100%" cellspacing="0" cellpadding="1" >
                             <thead>
                                 <tr>
                                     <th>Group Name</th>
@@ -68,13 +68,12 @@
                                     </tr>
                                 }
                             </tbody>
-                            <tr>
-                            </tr>
                         </table>
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="domar_pagination text-center">
+                                    <p>Current Page:</p>@ViewBag.current
                                     <ul>
                                         @for (int i = 1; i <= ViewBag.TotalPage; i++)
                                         {

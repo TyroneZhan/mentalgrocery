@@ -28,7 +28,7 @@
 
 <section class="domar_contact contact_v1 section_padding">
     <div class="container">
-        <div class="row">
+        <div class="row"  style="margin-bottom:20px">
             <div class="col-lg-12" align="center">
                 @if (Model.maEmbedLink != "null")
                 {
@@ -41,60 +41,75 @@
             </div>
         </div>
         <div class="contact_form">
-            <form>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Group Name</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maName)" name="maName" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Suburb</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maSuburb)" name="maSuburb" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Postcode</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maPostCode)" name="maPostCode" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>State</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maState)" name="maState" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>LGA</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maLGA)" name="maLGA" readonly>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="form_group">
-                            <p>Region</p>
-                            <input type="text" class="form_control" value="@Html.DisplayFor(model => model.maRegion)" name="maRegion" readonly>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>Group Name</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maName)</td>
+                        </tr>
+                    </table>
                 </div>
-            </form>
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>Suburb</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maSuburb)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>Postcode</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maPostCode)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>Address</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maAddress)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>LGA</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maLGA)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6">
+                    <table class="table table-bordered">
+                        <th>Regeion</th>
+                        <tr>
+                            <td>@Html.DisplayFor(model => model.maRegion)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="domar_box text-center">
                     <div class="domar_icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fab fa-internet-explorer"></i>
                     </div>
                     <div class="domar_info">
-                        <h5>address</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.maAddress)
-                            <br>
-                            @Html.DisplayFor(model => model.maSuburb)
-                        </p>
+                        <h5>Website</h5>
+                        @if (Model.maWeb == "null")
+                        {
+                            <p>Sorry, this group has no website.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.maWeb)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>
@@ -105,10 +120,16 @@
                     </div>
                     <div class="domar_info">
                         <h5>Phone</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.maPhone)
-                            <br /> &nbsp;
-                        </p>
+                        @if (Model.maPhone == "null")
+                        {
+                            <p>Sorry, this group has no contact number.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.maPhone)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>
@@ -119,10 +140,16 @@
                     </div>
                     <div class="domar_info">
                         <h5>Email</h5>
-                        <p>
-                            @Html.DisplayFor(model => model.maEmail)
-                            <br />&nbsp;
-                        </p>
+                        @if (Model.maEmail == "null")
+                        {
+                            <p>Sorry, this group has no email.</p>
+                        }
+                        else
+                        {
+                            <p>
+                                @Html.DisplayFor(model => model.maEmail)
+                            </p>
+                        }
                     </div>
                 </div>
             </div>

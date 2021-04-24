@@ -1961,16 +1961,28 @@ body{
 	color: #fff;
 	background: #0db896;
 }
+
+.domar_pagination li.active {
+	border-color: #0db896;
+	color: #fff;
+	background: #0db896;
+	cursor:default;
+}
+.domar_pagination a.active {
+	border-color: #0db896;
+	color: #fff;
+	background: #0db896;
+	cursor: default;
+}
 /*>----------------------------------
 	End blog.html css
 ------------------------------------<*/
-
 /*>----------------------------------
 	13. Start single_blog.html css
 ------------------------------------<*/
 .single_event_wrapper .domar_img,
 .single_course_wrapper .domar_img,
-.single_blog_wrapper .domar_img{
+.single_blog_wrapper .domar_img {
 	margin-bottom: 18px;
 }
 .single_blog_wrapper .domar_content_wrapper .admin_box {

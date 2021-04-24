@@ -26,10 +26,12 @@ namespace mentalgrocery.Controllers
             int total = db.CanoesKayaktsLists.Count();
             if (total % pagesize == 0)
             {
+                ViewBag.current = pageindex;
                 ViewBag.TotalPage = total / pagesize;
             }
             else
             {
+                ViewBag.current = pageindex;
                 ViewBag.TotalPage = total / pagesize + 1;
             }
             return View(user);
