@@ -358,6 +358,15 @@
     <Content Include="Views\WalkingLists\Edit.cshtml" />
     <Content Include="Views\WalkingLists\Index.cshtml" />
     <Content Include="Views\Home\Insights.cshtml" />
+    <Content Include="Views\WalkingLists\MapView.cshtml" />
+    <Content Include="Views\WalkingLists\SearchPostCodes.cshtml" />
+    <Content Include="Views\VolunteeringLists\MapView.cshtml" />
+    <Content Include="Views\VolunteeringLists\SearchPostCodes.cshtml" />
+    <Content Include="Views\MartialArtsLists\MapView.cshtml" />
+    <Content Include="Views\MartialArtsLists\SearchPostCodes.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\SearchPostCodes.cshtml" />
+    <Content Include="Views\CanoesKayaktsLists\MapView.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\frotend01\v16\" />

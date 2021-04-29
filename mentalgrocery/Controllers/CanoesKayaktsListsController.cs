@@ -140,5 +140,20 @@ namespace mentalgrocery.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult SearchPostCodes(int? postcode)
+        {
+
+            var viewList = db.CanoesKayaktsLists
+                .Where(x => x.ckPostCode.Equals(postcode.ToString()))
+                .OrderBy(n => n.ckId);
+
+            return View(viewList);
+        }
+
+        public ActionResult MapView()
+        {
+            return View();
+        }
     }
 }

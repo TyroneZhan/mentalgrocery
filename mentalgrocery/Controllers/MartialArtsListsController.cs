@@ -137,5 +137,21 @@ namespace mentalgrocery.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult SearchPostCodes(int? postcode)
+        {
+
+            var viewList = db.MartialArtsLists
+                .Where(x => x.maPostCode.Equals(postcode.ToString()))
+                .OrderBy(n => n.maId);
+
+            return View(viewList);
+        }
+
+
+        public ActionResult MapView()
+        {
+            return View();
+        }
     }
 }

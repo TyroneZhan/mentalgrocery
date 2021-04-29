@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<mentalgrocery.Models.CanoesKayaktsList>
 
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 @*<h2>Index</h2>
 
@@ -27,18 +25,21 @@
     </div>
 </section><!-- End domar_breadcrumb section -->
 <!-- Start domar_single_course section -->
+
+
 <section class="domar_single_course section_padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12">
+            <div class="col-lg-8">
                 <div class="single_course_wrapper">
                     <div class="domar_img">
                         <img src="/assets/images/canoe.jpg" class="img-fluid" alt="">
                     </div>
-                    <div class="container" style="padding:0px">
-                        <table class="table table-hover" style="table-layout: fixed;text-align:center;border-bottom:solid" width="100%" cellspacing="0" cellpadding="1">
+                    <div class="container">
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th>Group Name</th>
                                     <th>Postcode</th>
                                     <th>Address</th>
@@ -48,37 +49,40 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckName)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckPostCode)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.ckAddress)
-                                        </td>
-                                        <td>
-                                            @Html.ActionLink("More Details", "Details", new { id = item.ckId })
-                                        </td>
-                                    </tr>
-                                }
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.groupId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ckName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ckPostCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ckAddress)
+                        </td>
+                        <td>
+                            @Html.ActionLink("More Details", "Details", new { id = item.ckId })
+                        </td>
+                    </tr>
+}
+                                <tr>
+                                </tr>
                             </tbody>
                         </table>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="domar_pagination text-center">
-                                    <p>Current Page:</p>@ViewBag.current
-                                    <ul>
-                                        @for (int i = 1; i <= ViewBag.TotalPage; i++)
-                                        {
+                        @*<div class="row">
+                                <div class="col-lg-12">
+                                    <div class="domar_pagination text-center">
+                                        <ul>
+                                            @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                                            {
 
-                                            <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>
-                                        }
-                                    </ul>
+                                <li>@Html.ActionLink(i.ToString(), "Index", new { pageindex = i, pagesize = 10 })</li>}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div>*@
                     </div>
 
                     <!--<div class="admin_area">
@@ -194,7 +198,7 @@
                                 </div>
                                 <div class="domar_info">
                                     <div class="post_title">
-                                        <h3>@Html.ActionLink("Martial Arts Groups", "Index", "MartialArtsLists")</h3>
+                                        <h3>@Html.ActionLink("Martial Arts Groups", "Index", "MatrialArtsLists")</h3>
                                     </div>
                                     <div class="post_meta">
                                         <div class="bottom_info">
@@ -232,10 +236,10 @@
                                     </div>
                                 </div>
                             </div>
-                            @*search function*@
-                            <div class="course_box">
-                                <div class="domar_info" style="padding: 27px 30px 15px; border: 1px solid #ddd;">
-                                    <div class="post_title text-center">
+
+                            @*this is test*@                            <div class="course_box">
+                                <div class="domar_info">
+                                    <div class="post_title">
                                         <h3>Search by Postcodes </h3>
                                     </div>
                                     <div class="post_meta">
@@ -266,6 +270,9 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
@@ -273,14 +280,13 @@
         </div>
     </div>
 </section><!-- End domar_single_course section -->
-
 <script>
     function searchByPostCodes() {
         var url = '@Url.Action("SearchPostCodes", "CanoesKayaktsLists")';
         var postcode = $('#post_code').val();
         if (postcode === "")
         {
-            
+
         } else {
             window.location.href = url + '/?postcode=' + postcode;
         }

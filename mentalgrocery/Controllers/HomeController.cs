@@ -61,5 +61,26 @@ namespace mentalgrocery.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Login(string username, string pwd)
+        {
+            
+            if (username == "TE31" && pwd == "admin")
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Content("<script>alert('Incorrect username or password');window.location.href='../Home/Login';</script>");
+            }
+
+        }
+
+
+
     }
 }

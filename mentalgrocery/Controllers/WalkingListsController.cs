@@ -140,5 +140,22 @@ namespace mentalgrocery.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public ActionResult SearchPostCodes(int? postcode)
+        {
+
+            var viewList = db.WalkingLists
+                .Where(x => x.waPostCode.Equals(postcode.ToString()))
+                .OrderBy(n => n.waId);
+
+            return View(viewList);
+        }
+
+
+        public ActionResult MapView()
+        {
+            return View();
+        }
     }
 }
