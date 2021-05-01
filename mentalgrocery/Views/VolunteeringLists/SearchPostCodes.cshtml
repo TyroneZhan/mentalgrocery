@@ -34,6 +34,7 @@
                         <img src="/assets/images/vo.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="container">
+                        <br/><h5>@ViewBag.Message</h5><br/>
                         <table class="table table-hover">
                             <tr>
                                 <th>#</th>
@@ -337,13 +338,14 @@
         var url = '@Url.Action("SearchPostCodes", "VolunteeringLists")';
         var postcode = $('#post_code').val();
         if (postcode === "")
-        {
-
-        } else {
-            window.location.href = url + '/?postcode=' + postcode;
+        {} else {
+            var pcode = parseInt(postcode);
+            if (pcode >= 3000 && pcode <= 3999) {
+                window.location.href = url + '/?postcode=' + postcode;
+            } else {
+                alert("Please enter valid postcode !");
+            }
         }
-
-
     }
 </script>
 <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>

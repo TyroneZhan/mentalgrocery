@@ -145,6 +145,88 @@ namespace mentalgrocery.Controllers
                 .Where(x => x.maPostCode.Equals(postcode.ToString()))
                 .OrderBy(n => n.maId);
 
+            if (viewList.Count() == 0)
+            {
+                List<MartialArtsList> temp_list = db.MartialArtsLists
+                    .ToList();
+                int up_one = -1;
+                int up_two = -1;
+                int down_one = -1;
+                int down_two = -1;
+
+                var uplist = temp_list
+                    .Where(c => int.Parse(c.maPostCode) > postcode)
+                    .OrderBy(c => int.Parse(c.maPostCode)).ToList();
+                var downlist = temp_list
+                    .Where(c => int.Parse(c.maPostCode) < postcode)
+                    .OrderByDescending(c => int.Parse(c.maPostCode)).ToList();
+
+                ViewBag.Message = "sorry no groups In the " + postcode + " postcode. Here are the nearest groups. For more information please click the In Map button";
+
+                if (downlist.Count < 1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).maPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).maPostCode);
+
+                    var results = db.MartialArtsLists
+                        .Where(c => c.maPostCode.Equals(up_one.ToString())
+                                    | c.maPostCode.Equals(up_two.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count == 1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).maPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).maPostCode);
+                    down_one = int.Parse(downlist.ElementAt(0).maPostCode);
+
+                    var results = db.MartialArtsLists
+                        .Where(c => c.maPostCode.Equals(up_one.ToString())
+                                    | c.maPostCode.Equals(up_two.ToString())
+                                    | c.maPostCode.Equals(down_one.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count > 2 && uplist.Count < 1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).maPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).maPostCode);
+
+                    var results = db.MartialArtsLists
+                        .Where(c => c.maPostCode.Equals(down_one.ToString())
+                                    | c.maPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+                else if (downlist.Count > 2 && uplist.Count == 1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).maPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).maPostCode);
+                    up_one = int.Parse(uplist.ElementAt(0).maPostCode);
+
+                    var results = db.MartialArtsLists
+                        .Where(c => c.maPostCode.Equals(down_one.ToString())
+                                    | c.maPostCode.Equals(down_two.ToString())
+                                    | c.maPostCode.Equals(up_one.ToString())).ToList();
+                    return View(results);
+                }
+                else
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).maPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).maPostCode);
+
+                    down_one = int.Parse(downlist.ElementAt(0).maPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).maPostCode);
+
+                    var results = db.MartialArtsLists
+                        .Where(c => c.maPostCode.Equals(up_one.ToString())
+                                    | c.maPostCode.Equals(up_two.ToString())
+                                    | c.maPostCode.Equals(down_one.ToString())
+                                    | c.maPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+
+            }
+
             return View(viewList);
         }
 

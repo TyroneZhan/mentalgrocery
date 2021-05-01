@@ -149,6 +149,88 @@ namespace mentalgrocery.Controllers
                 .Where(x => x.waPostCode.Equals(postcode.ToString()))
                 .OrderBy(n => n.waId);
 
+            if (viewList.Count() == 0)
+            {
+                List<WalkingList> temp_list = db.WalkingLists
+                    .ToList();
+                int up_one = -1;
+                int up_two = -1;
+                int down_one = -1;
+                int down_two = -1;
+
+                var uplist = temp_list
+                    .Where(c => int.Parse(c.waPostCode) > postcode)
+                    .OrderBy(c => int.Parse(c.waPostCode)).ToList();
+                var downlist = temp_list
+                    .Where(c => int.Parse(c.waPostCode) < postcode)
+                    .OrderByDescending(c => int.Parse(c.waPostCode)).ToList();
+
+                ViewBag.Message = "sorry no groups In the " + postcode + " postcode. Here are the nearest groups. For more information please click the In Map button";
+
+                if (downlist.Count < 1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).waPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).waPostCode);
+
+                    var results = db.WalkingLists
+                        .Where(c => c.waPostCode.Equals(up_one.ToString())
+                                    | c.waPostCode.Equals(up_two.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count == 1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).waPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).waPostCode);
+                    down_one = int.Parse(downlist.ElementAt(0).waPostCode);
+
+                    var results = db.WalkingLists
+                        .Where(c => c.waPostCode.Equals(up_one.ToString())
+                                    | c.waPostCode.Equals(up_two.ToString())
+                                    | c.waPostCode.Equals(down_one.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count > 2 && uplist.Count < 1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).waPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).waPostCode);
+
+                    var results = db.WalkingLists
+                        .Where(c => c.waPostCode.Equals(down_one.ToString())
+                                    | c.waPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+                else if (downlist.Count > 2 && uplist.Count == 1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).waPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).waPostCode);
+                    up_one = int.Parse(uplist.ElementAt(0).waPostCode);
+
+                    var results = db.WalkingLists
+                        .Where(c => c.waPostCode.Equals(down_one.ToString())
+                                    | c.waPostCode.Equals(down_two.ToString())
+                                    | c.waPostCode.Equals(up_one.ToString())).ToList();
+                    return View(results);
+                }
+                else
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).waPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).waPostCode);
+
+                    down_one = int.Parse(downlist.ElementAt(0).waPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).waPostCode);
+
+                    var results = db.WalkingLists
+                        .Where(c => c.waPostCode.Equals(up_one.ToString())
+                                    | c.waPostCode.Equals(up_two.ToString())
+                                    | c.waPostCode.Equals(down_one.ToString())
+                                    | c.waPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+
+            }
+
             return View(viewList);
         }
 

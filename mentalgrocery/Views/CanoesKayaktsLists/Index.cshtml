@@ -279,12 +279,13 @@
         var url = '@Url.Action("SearchPostCodes", "CanoesKayaktsLists")';
         var postcode = $('#post_code').val();
         if (postcode === "")
-        {
-            
-        } else {
-            window.location.href = url + '/?postcode=' + postcode;
+        {} else {
+           var pcode = parseInt(postcode);
+            if (pcode >= 3000 && pcode <= 3999) {
+                window.location.href = url + '/?postcode=' + postcode;
+            } else {
+                alert("Please enter valid postcode !");
+            }
         }
-
-
     }
 </script>

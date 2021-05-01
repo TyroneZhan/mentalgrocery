@@ -148,6 +148,88 @@ namespace mentalgrocery.Controllers
                 .Where(x => x.ckPostCode.Equals(postcode.ToString()))
                 .OrderBy(n => n.ckId);
 
+            if (viewList.Count()==0)
+            {
+                List<CanoesKayaktsList> temp_list = db.CanoesKayaktsLists
+                    .ToList();
+                int up_one = -1;
+                int up_two = -1;
+                int down_one = -1;
+                int down_two = -1;
+
+                var uplist = temp_list
+                    .Where(c => int.Parse(c.ckPostCode)>postcode)
+                    .OrderBy(c => int.Parse(c.ckPostCode)).ToList();
+                var downlist = temp_list
+                    .Where(c => int.Parse(c.ckPostCode) < postcode)
+                    .OrderByDescending(c => int.Parse(c.ckPostCode)).ToList();
+
+                ViewBag.Message = "sorry no groups In the " + postcode + " postcode. Here are the nearest groups. For more information please click the In Map button";
+
+                if (downlist.Count< 1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).ckPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).ckPostCode);
+
+                    var results = db.CanoesKayaktsLists
+                        .Where(c => c.ckPostCode.Equals(up_one.ToString())
+                                    | c.ckPostCode.Equals(up_two.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count ==1 && uplist.Count > 2)
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).ckPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).ckPostCode);
+                    down_one = int.Parse(downlist.ElementAt(0).ckPostCode);
+
+                    var results = db.CanoesKayaktsLists
+                        .Where(c => c.ckPostCode.Equals(up_one.ToString())
+                                    | c.ckPostCode.Equals(up_two.ToString())
+                                    | c.ckPostCode.Equals(down_one.ToString())).ToList();
+                    return View(results);
+
+                }
+                else if (downlist.Count >2 && uplist.Count <1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).ckPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).ckPostCode);
+
+                    var results = db.CanoesKayaktsLists
+                        .Where(c => c.ckPostCode.Equals(down_one.ToString())
+                                    | c.ckPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+                else if (downlist.Count > 2 && uplist.Count == 1)
+                {
+                    down_one = int.Parse(downlist.ElementAt(0).ckPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).ckPostCode);
+                    up_one = int.Parse(uplist.ElementAt(0).ckPostCode);
+
+                    var results = db.CanoesKayaktsLists
+                        .Where(c => c.ckPostCode.Equals(down_one.ToString())
+                                    | c.ckPostCode.Equals(down_two.ToString())
+                                    | c.ckPostCode.Equals(up_one.ToString())).ToList();
+                    return View(results);
+                }
+                else
+                {
+                    up_one = int.Parse(uplist.ElementAt(0).ckPostCode);
+                    up_two = int.Parse(uplist.ElementAt(1).ckPostCode);
+
+                    down_one = int.Parse(downlist.ElementAt(0).ckPostCode);
+                    down_two = int.Parse(downlist.ElementAt(1).ckPostCode);
+
+                    var results = db.CanoesKayaktsLists
+                        .Where(c => c.ckPostCode.Equals(up_one.ToString())
+                                    | c.ckPostCode.Equals(up_two.ToString())
+                                    | c.ckPostCode.Equals(down_one.ToString())
+                                    | c.ckPostCode.Equals(down_two.ToString())).ToList();
+                    return View(results);
+                }
+
+            }
+
             return View(viewList);
         }
 
