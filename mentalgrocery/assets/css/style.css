@@ -792,12 +792,12 @@ body{
 	position: relative;
 	overflow: hidden;
 }
-.teacher_box .bg_overlay{
-	width: 330px;
-  	height: 410px;
-  	opacity: 0;
-  	visibility: hidden;
-  	top: 50%;
+.teacher_box .bg_overlay {
+	width: 330%;
+	height: 410px;
+	opacity: 0;
+	visibility: hidden;
+	top: 50%;
 	left: 50%;
 	transform: translate(-100%,-50%);
 	transition: all .3s;
@@ -807,7 +807,7 @@ body{
     text-align: center;
     top: 50%;
     left: 50%;
-    width: 87%;
+    width: 95%;
     padding: 10px 16px;
     opacity: 0;
   	visibility: hidden;
