@@ -240,6 +240,7 @@
     <Content Include="assets\images\ma.jpg" />
     <Content Include="assets\images\ma2.jpg" />
     <Content Include="assets\images\ma_s.jpg" />
+    <Content Include="assets\images\Mental_Grocery.ico" />
     <Content Include="assets\images\Mental_Grocery.jpg" />
     <Content Include="assets\images\Mental_Grocery_2.png" />
     <Content Include="assets\images\SadPassivity.jpg" />

@@ -222,13 +222,13 @@
                                     <div class="post_meta">
                                         <div class="bottom_info">
                                             @*<ul>
-                                                    <li><span>Recommendation:&nbsp;&nbsp; </span></li>
-                                                    <li class="star"></li>
-                                                    <li class="star"></li>
-                                                    <li class="star"></li>
-                                                    <li class="star"></li>
-                                                    <li class="star"></li>
-                                                </ul>*@
+                        <li><span>Recommendation:&nbsp;&nbsp; </span></li>
+                        <li class="star"></li>
+                        <li class="star"></li>
+                        <li class="star"></li>
+                        <li class="star"></li>
+                        <li class="star"></li>
+                    </ul>*@
                                         </div>
                                     </div>
                                 </div>
@@ -249,14 +249,31 @@
                                                                     <input id="post_code" type="number" class="form_control" name="postcode_search">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                            <div class="col-lg-12 text-center">
                                                                 <div class="section_title text-center" style="margin-bottom: 20px; margin-left: 5px">
-                                                                    <input type="button" value="Groups" onclick="searchByPostCodes()" class="domar_btn"></input>
+                                                                    <input type="button" value="Search" onclick="searchByPostCodes()" class="domar_btn"></input>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-lg-6">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course_box">
+                                    <div class="domar_info" style="padding: 27px 30px 15px; border: 1px solid #ddd;">
+                                        <div class="post_title text-center">
+                                            <h3>Show All Groups In Map</h3>
+                                        </div>
+                                        <div class="post_meta">
+                                            <div class="bottom_info">
+                                                <div class="contact_form">
+                                                    <form>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 text-center">
                                                                 <div class="section_title text-center" style="margin-bottom: 20px; margin-left: 5px">
-                                                                    <input type="button" value="In Map" onclick="location.href='@Url.Action("MapView","MartialArtsLists")'" class="domar_btn"></input>
+                                                                    <input type="button" value="Show" onclick="location.href = '@Url.Action("MapView","VolunteeringLists")'" class="domar_btn"></input>
                                                                 </div>
                                                             </div>
                                                         </div>

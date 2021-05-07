@@ -164,7 +164,7 @@ namespace mentalgrocery.Controllers
                     .Where(c => int.Parse(c.ckPostCode) < postcode)
                     .OrderByDescending(c => int.Parse(c.ckPostCode)).ToList();
 
-                ViewBag.Message = "sorry no groups In the " + postcode + " postcode. Here are the nearest groups. For more information please click the In Map button";
+                ViewBag.Message = "Sorry, we couldn't find any group available in the " + postcode + " postcode. Do not worry. Here is a list of group nearby that you might be interested in.";
 
                 if (downlist.Count< 1 && uplist.Count > 2)
                 {
