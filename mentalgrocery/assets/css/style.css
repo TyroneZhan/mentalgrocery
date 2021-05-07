@@ -793,8 +793,8 @@ body{
 	overflow: hidden;
 }
 .teacher_box .bg_overlay {
-	width: 330%;
-	height: 410px;
+	width: 95%;
+	height: 95%;
 	opacity: 0;
 	visibility: hidden;
 	top: 50%;
