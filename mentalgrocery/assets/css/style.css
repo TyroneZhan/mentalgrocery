@@ -177,6 +177,73 @@ body{
 ------------------------------------<*/
 
 /*>----------------------------------
+	02. Start login css
+------------------------------------*/
+.login_logo {
+	margin-top: 230px;
+	text-align: center;
+}
+
+.login {
+	background: url(../images/logo_mental_1.png);
+	width: 356px;
+	height: 154px;
+	margin: auto;
+	position: relative;
+}
+
+.login_1 {
+	position: absolute;
+	top: 28px;
+	left: 65px;
+}
+
+	.login_1 input {
+		border: 0px;
+		background: none;
+		line-height: 22px;
+		font-size: 12px;
+		color: #FFF;
+		width: 260px;
+		height: 22px;
+	}
+
+.login_2 {
+	position: absolute;
+	top: 72px;
+	left: 65px;
+}
+
+	.login_2 input {
+		border: 0px;
+		background: none;
+		line-height: 22px;
+		font-size: 12px;
+		color: #FFF;
+		width: 260px;
+		height: 22px;
+	}
+
+.login_3 {
+	position: absolute;
+	top: 113px;
+	left: 25px;
+}
+
+	.login_3 input {
+		border: 0px;
+		background: none;
+	}
+
+.login_4 {
+	position: absolute;
+	top: 110px;
+	right: 30px;
+}
+/*>----------------------------------
+	 End login css
+------------------------------------<*/
+/*>----------------------------------
 	02. Start Search Wrapper css
 ------------------------------------*/
 .search_wrapper.active{
